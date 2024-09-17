@@ -1,0 +1,257 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fira Code', monospace; /* Monospaced font for a developer feel */
+    background-color: #1E1E1E; /* Dark background for the whole body */
+    color: #ECECEC; /* Light grey text color for readability */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    max-width: 1200px; /* Maximum width of the content area */
+}
+
+header {
+    background-color: #2C3E50; /* Dark blue header background */
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+header h1.title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: #f9a825; /* Gold color for the main title */
+}
+
+header p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: #f9a825; /* Gold color for navigation links */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #1abc9c; /* Cyan color on hover for navigation links */
+}
+
+.section {
+    padding: 70px 0;
+    text-align: center;
+}
+
+.bg-dark {
+    background-color: #333; /* Dark background for sections */
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #f9a825; /* Gold color for headers */
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #f9a825; /* Gold underline for headers */
+    margin: 10px auto;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #C5C5C5; /* Lighter text color for paragraph */
+    line-height: 1.8;
+}
+
+.project-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.project-item {
+    background-color: #2C3E50; /* Dark blue for project items */
+    padding: 30px;
+    margin: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.project-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover for project items */
+}
+
+.project-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.project-item a.button {
+    display: inline-block;
+    background-color: #f9a825; /* Gold color for buttons */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.project-item a.button:hover {
+    background-color: #d4a017; /* Dark gold on hover for buttons */
+}
+
+.experience-item {
+    background-color: #2C3E50; /* Dark blue for experience items */
+    padding: 25px;
+    margin: 15px 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
+    min-height: 120px; /* Ensures items are tall enough to not overlap */
+}
+
+.experience-item i {
+    font-size: 2.5rem; /* Size of the icons */
+    color: #f9a825; /* Gold color for icons */
+    position: absolute;
+    top: 20px; /* Positioning from the top */
+    right: 20px; /* Positioning from the right */
+}
+
+.experience-item h3, .experience-item p {
+    padding-right: 50px; /* Right padding to prevent text overlap with icons */
+}
+
+#contact {
+    background-color: #333; /* Dark background for contrast */
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#contact h2 {
+    margin-bottom: 20px;
+    color: #f9a825; /* Gold color for the header */
+}
+
+#contact p {
+    margin-bottom: 20px;
+    color: #C5C5C5; /* Light grey text color */
+}
+
+.contact-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers everything within the contact actions div */
+    gap: 20px; /* Space between button and social links */
+}
+
+#contact a.email {
+    background-color: #3498db; /* Bright blue background */
+    color: #ffffff; /* White text */
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#contact a.email:hover {
+    background-color: #2979ff; /* Lighter blue on hover */
+    transform: translateY(-2px);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center; /* Centers the social links horizontally */
+    gap: 15px; /* Space between each social link icon */
+}
+
+.social-links a {
+    color: #ffffff; /* White color for icons */
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #f9a825; /* Gold color on hover for all contact links */
+}
+
+footer {
+    background-color: #2C3E50; /* Dark blue background for footer */
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Skills Section */
+.bg-light {
+    background-color: #f4f4f4; /* Light background for sections */
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.skill-item {
+    padding: 20px;
+    background-color: #fff; /* White background for skill items */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.skill-item i {
+    font-size: 40px;
+    color: #f9a825; /* Gold color to match the theme */
+    margin-bottom: 10px;
+}
+
+.skill-item h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.skill-item p {
+    font-size: 0.9rem;
+    color: #666;
+}
