@@ -61,6 +61,7 @@ header nav ul li a:hover {
 .section {
     padding: 70px 0;
     text-align: center;
+    clear: both; /* Ensures sections don't overlap */
 }
 
 .bg-dark {
@@ -90,28 +91,38 @@ p {
 }
 
 .project-list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensures 3 columns for project grid */
+    gap: 20px;
 }
 
 .project-item {
     background-color: #2C3E50; /* Dark blue for project items */
     padding: 30px;
-    margin: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 30%;
     text-align: left;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Make the project items columnar */
+    justify-content: space-between; /* Ensures content is spaced */
+    min-height: 450px; /* Minimum height to ensure consistency */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
 .project-item:hover {
-    transform: translateY(-5px); /* Lift effect on hover for project items */
+    transform: scale(1.05); /* Slightly scales up the project card on hover */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); /* Increases the shadow on hover for a popping effect */
 }
 
+.project-item p {
+    flex-grow: 1; /* Allows the paragraph to grow and take up available space */
+}
+
+/* Image sizing fix */
 .project-img {
-    width: 100%;
-    height: auto;
+    max-width: 100%; /* Ensures the image takes up only as much width as its container */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: cover; /* Makes sure the image covers the available space without distortion */
     border-radius: 10px;
     margin-bottom: 20px;
 }
@@ -124,6 +135,7 @@ p {
     border-radius: 25px;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    align-self: center; /* Centers the button horizontally */
 }
 
 .project-item a.button:hover {
@@ -256,13 +268,15 @@ footer p {
     color: #666;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    .project-item {
-        width: 100%;
+/* Media Queries for responsiveness */
+@media (max-width: 1024px) {
+    .project-list {
+        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for smaller screens */
     }
+}
 
-    .skills-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 768px) {
+    .project-list {
+        grid-template-columns: repeat(1, 1fr); /* Adjust to 1 column for small screens */
     }
 }
