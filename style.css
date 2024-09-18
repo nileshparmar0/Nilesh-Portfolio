@@ -255,3 +255,14 @@ footer p {
     font-size: 0.9rem;
     color: #666;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .project-item {
+        width: 100%;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
