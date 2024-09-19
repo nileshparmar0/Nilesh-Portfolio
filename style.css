@@ -1,78 +1,131 @@
-/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth; /* Smooth scrolling for the page */
 }
 
 body {
-    font-family: 'Fira Code', monospace; /* Monospaced font for a developer feel */
-    background-color: #1E1E1E; /* Dark background for the whole body */
-    color: #ECECEC; /* Light grey text color for readability */
+    font-family: 'Open Sans', sans-serif; /* Clean, professional body font */
+    background-color: #121212; /* Dark background */
+    color: #ECECEC; /* Light text color for readability */
+    background: linear-gradient(135deg, #1e1e1e 0%, #121212 100%);
+    overflow-x: hidden;
 }
 
+/* Container */
 .container {
-    width: 80%;
+    width: 85%;
     margin: auto;
-    max-width: 1200px; /* Maximum width of the content area */
+    max-width: 1200px;
 }
 
+/* Header */
 header {
-    background-color: #2C3E50; /* Dark blue header background */
+    background-color: #212121; /* Dark grey background */
     color: #fff;
-    padding: 40px 0;
+    padding: 30px 0; /* More padding for a hero-like feel */
     text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 2s ease; /* Smooth fade-in animation */
 }
 
 header h1.title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Bold, modern heading font */
     font-size: 3rem;
-    color: #f9a825; /* Gold color for the main title */
+    color: #29b6f6; /* Vibrant blue for a professional feel */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: fadeUp 1.5s ease-in-out; /* Fade in the title from bottom */
 }
 
 header p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 300;
+    color: #f5f5f5;
+    margin-top: 10px;
+    animation: fadeUp 2s ease-in-out; /* Fade in from bottom */
 }
 
 header nav ul {
     list-style-type: none;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 header nav ul li {
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 header nav ul li a {
-    color: #f9a825; /* Gold color for navigation links */
-    text-decoration: none;
+    color: #29b6f6;
     font-weight: 500;
     font-size: 1.2rem;
+    text-decoration: none;
     transition: color 0.3s ease;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #29b6f6;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
 }
 
 header nav ul li a:hover {
-    color: #1abc9c; /* Cyan color on hover for navigation links */
+    color: #00e676; /* Change to green for a slight color variation */
 }
 
+/* Smooth animations for fade-in effects */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Section */
 .section {
-    padding: 70px 0;
+    padding: 50px 0; /* Adjusted padding for balance */
     text-align: center;
-    clear: both; /* Ensures sections don't overlap */
+    clear: both;
 }
 
 .bg-dark {
-    background-color: #333; /* Dark background for sections */
+    background-color: #1e1e1e;
 }
 
+/* Section Headings */
 h2 {
     font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #f9a825; /* Gold color for headers */
+    margin-bottom: 20px;
+    color: #29b6f6;
+    font-family: 'Poppins', sans-serif;
     position: relative;
+    animation: fadeUp 1s ease;
 }
 
 h2::after {
@@ -80,164 +133,199 @@ h2::after {
     display: block;
     width: 80px;
     height: 4px;
-    background-color: #f9a825; /* Gold underline for headers */
+    background-color: #00e676;
     margin: 10px auto;
+    animation: fadeUp 1.2s ease;
 }
 
 p {
-    font-size: 1.1rem;
-    color: #C5C5C5; /* Lighter text color for paragraph */
+    font-size: 1.2rem;
+    color: #c5c5c5;
     line-height: 1.8;
+    animation: fadeUp 1.4s ease;
 }
 
+/* Project Section */
 .project-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Ensures 3 columns for project grid */
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
 }
 
 .project-item {
-    background-color: #2C3E50; /* Dark blue for project items */
-    padding: 30px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    text-align: left;
+    background-color: #2b2b2b;
+    padding: 20px;
     border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 100%;
+    position: relative;
     display: flex;
-    flex-direction: column; /* Make the project items columnar */
-    justify-content: space-between; /* Ensures content is spaced */
-    min-height: 450px; /* Minimum height to ensure consistency */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    animation: fadeUp 1.5s ease;
 }
 
 .project-item:hover {
-    transform: scale(1.05); /* Slightly scales up the project card on hover */
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); /* Increases the shadow on hover for a popping effect */
+    transform: scale(1.08); /* Slightly larger on hover */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
 }
 
 .project-item p {
-    flex-grow: 1; /* Allows the paragraph to grow and take up available space */
+    flex-grow: 1;
 }
 
-/* Image sizing fix */
 .project-img {
-    max-width: 100%; /* Ensures the image takes up only as much width as its container */
-    height: auto; /* Maintain the aspect ratio */
-    object-fit: cover; /* Makes sure the image covers the available space without distortion */
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
     border-radius: 10px;
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover .project-img {
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 .project-item a.button {
-    display: inline-block;
-    background-color: #f9a825; /* Gold color for buttons */
+    background-color: #29b6f6;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 25px;
     border-radius: 25px;
     text-decoration: none;
+    font-weight: bold;
     transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: auto;
     align-self: center; /* Centers the button horizontally */
+    animation: fadeUp 1.7s ease;
 }
 
 .project-item a.button:hover {
-    background-color: #d4a017; /* Dark gold on hover for buttons */
+    background-color: #00e676;
 }
 
+/* Experience Section */
 .experience-item {
-    background-color: #2C3E50; /* Dark blue for experience items */
-    padding: 25px;
-    margin: 15px 0;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #2b2b2b;
+    padding: 30px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     text-align: left;
     position: relative;
-    min-height: 120px; /* Ensures items are tall enough to not overlap */
+    overflow: hidden;
+    animation: fadeUp 2s ease;
 }
 
 .experience-item i {
-    font-size: 2.5rem; /* Size of the icons */
-    color: #f9a825; /* Gold color for icons */
+    font-size: 3rem;
+    color: #29b6f6;
     position: absolute;
-    top: 20px; /* Positioning from the top */
-    right: 20px; /* Positioning from the right */
+    top: 20px;
+    right: 20px;
+    opacity: 0.1;
+    transition: opacity 0.3s ease;
 }
 
-.experience-item h3, .experience-item p {
-    padding-right: 50px; /* Right padding to prevent text overlap with icons */
+.experience-item:hover i {
+    opacity: 0.5;
 }
 
-#contact {
-    background-color: #333; /* Dark background for contrast */
+.experience-item h3 {
     color: #fff;
+}
+
+.experience-item p {
+    color: #cfcfcf;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #1e1e1e;
     padding: 50px 0;
-    text-align: center;
+    color: #fff;
 }
 
 #contact h2 {
     margin-bottom: 20px;
-    color: #f9a825; /* Gold color for the header */
+    color: #29b6f6;
 }
 
 #contact p {
     margin-bottom: 20px;
-    color: #C5C5C5; /* Light grey text color */
+    color: #cfcfcf;
 }
 
 .contact-actions {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers everything within the contact actions div */
-    gap: 20px; /* Space between button and social links */
+    align-items: center;
+    gap: 20px;
 }
 
 #contact a.email {
-    background-color: #3498db; /* Bright blue background */
-    color: #ffffff; /* White text */
+    background-color: #00e676;
+    color: #ffffff;
     padding: 12px 25px;
     border-radius: 25px;
     text-decoration: none;
     font-size: 1.1rem;
     transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeUp 2s ease;
 }
 
 #contact a.email:hover {
-    background-color: #2979ff; /* Lighter blue on hover */
+    background-color: #29b6f6;
     transform: translateY(-2px);
 }
 
 .social-links {
     display: flex;
-    justify-content: center; /* Centers the social links horizontally */
-    gap: 15px; /* Space between each social link icon */
+    justify-content: center;
+    gap: 15px;
 }
 
 .social-links a {
-    color: #ffffff; /* White color for icons */
+    color: #ffffff;
     text-decoration: none;
     font-size: 1.5rem;
     transition: color 0.3s;
+    animation: fadeUp 2.2s ease;
 }
 
 .social-links a:hover {
-    color: #f9a825; /* Gold color on hover for all contact links */
+    color: #00e676;
 }
 
+/* Footer */
 footer {
-    background-color: #2C3E50; /* Dark blue background for footer */
+    background-color: #212121;
     color: #fff;
-    padding: 30px 0;
+    padding: 20px 0;
     text-align: center;
-    margin-top: 40px;
 }
+
+/* Styling for the profile image */
+.profile-img {
+    width: 150px; /* Adjust the size as needed */
+    height: 150px; /* Adjust the size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    margin-top: 20px; /* Adds some space between the name and the image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow around the image */
+    object-fit: cover; /* Ensures the image maintains aspect ratio and fits in the circular frame */
+}
+
 
 footer p {
     margin: 0;
 }
 
 /* Skills Section */
-.bg-light {
-    background-color: #f4f4f4; /* Light background for sections */
-}
-
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -247,36 +335,70 @@ footer p {
 
 .skill-item {
     padding: 20px;
-    background-color: #fff; /* White background for skill items */
+    background-color: #2b2b2b;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeUp 2.4s ease;
 }
 
 .skill-item i {
-    font-size: 40px;
-    color: #f9a825; /* Gold color to match the theme */
+    font-size: 3rem;
+    color: #29b6f6;
     margin-bottom: 10px;
 }
 
 .skill-item h3 {
     margin: 10px 0;
-    color: #333;
+    color: #fff;
 }
 
 .skill-item p {
     font-size: 0.9rem;
-    color: #666;
+    color: #cfcfcf;
 }
 
-/* Media Queries for responsiveness */
+/* Responsive Design */
 @media (max-width: 1024px) {
     .project-list {
-        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for smaller screens */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header h1.title {
+        font-size: 2rem;
+    }
+
+    header nav ul li a {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 40px 0; /* Reduce padding further for tablets */
     }
 }
 
 @media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
     .project-list {
-        grid-template-columns: repeat(1, 1fr); /* Adjust to 1 column for small screens */
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    header h1.title {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
