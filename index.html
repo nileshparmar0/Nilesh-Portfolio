@@ -1,179 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nilesh Parmar's Developer Portfolio">
-    <title>Nilesh Parmar | Software Developer Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Nilesh Parmar - Software Engineer with 2.5+ years experience in full-stack development, cloud platforms, and scalable solutions"
+    />
+    <title>Nilesh Parmar | Software Engineer Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-animation"></div>
+
     <!-- Header Section -->
     <header>
-        <div class="container">
-            <h1 class="title">Nilesh Parmar</h1>
-            <!-- Add your profile image below the title -->
-            <img src="images/Nilesh.jpg" alt="Nilesh Parmar" class="profile-img">
-            <p>Software Developer | Web Developer</p>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+      <div class="container">
+        <div class="hero-content">
+          <div class="profile-img">
+            <img src="images/Nilesh.jpg" alt="Nilesh Parmar" />
+          </div>
+          <h1>Nilesh Parmar</h1>
+          <p class="subtitle">
+            Software Engineer | Full-Stack Developer | Cloud Solutions Architect
+          </p>
+
+          <div class="stats">
+            <div class="stat-item">
+              <span class="stat-number">2.5+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">40%</span>
+              <span class="stat-label">Performance Boost</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">35%</span>
+              <span class="stat-label">System Efficiency</span>
+            </div>
+          </div>
+
+          <nav>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
         </div>
+      </div>
     </header>
 
     <!-- About Section -->
     <section id="about" class="section">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-                Hello! I’m Nilesh Parmar, a dedicated and driven Software Developer with hands-on experience in building robust, scalable applications. Currently pursuing a Master of Science in Information Systems at Northeastern University, I specialize in backend development, full-stack web technologies, and data-driven decision-making. 
-                <br><br>
-                With a strong foundation in Python, Java, JavaScript, and the MERN stack, I’m passionate about creating impactful software solutions that solve real-world problems. My projects span across web development, AI, and data science, and I have extensive experience working with cloud services, databases, and visualization tools like Power BI and Tableau.
-                <br><br>
-                Always eager to expand my knowledge and skills, I look forward to contributing to exciting projects that challenge me to think critically and creatively. Let's collaborate and build something extraordinary together!
-            </p>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">
+            Software engineer with 2.5+ years of experience building scalable
+            web applications and cloud solutions
+          </p>
         </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section bg-dark">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="project-list">
-                <div class="project-item">
-                    <img src="images/Social-Media-Application.png" alt="Real-Time Chat Application" class="project-img">
-                    <h3>Social Media Application</h3>
-                    <p>Developed a social media platform using Django, with features like user authentication, profile management, and post creation. Ensured a responsive design for seamless interaction across devices.</p>
-                    <a href="https://github.com/nileshparmar0/Social-Media-App" target="_blank" class="button">View on GitHub</a>
-                </div>
-                <div class="project-item">
-                    <img src="images/Medical-Prescription-Delivery-System.png" alt="Custom E-Commerce Platform" class="project-img">
-                    <h3>Medical Prescription Delivery System</h3>
-                    <p>Developed a secure, real-time system using MySQL for data management and a GUI for user interactions. Ensured customer privacy and utilized Power BI for detailed reporting on sales and behavioral data.</p>
-                    <a href="https://github.com/nileshparmar0/Medical-Prescription-Delivery-System" target="_blank" class="button">View on GitHub</a>
-                </div>
-                <div class="project-item">
-                    <img src="images/University-Management-System.png" alt="Machine Learning Model Deployment" class="project-img">
-                    <h3>University Management System</h3>
-                    <p>Developed a University Management System using Java and MySQL, integrating with police, banks, and cafes for optimized resource allocation. Implemented an automated restocking solution to streamline campus café operations.</p>
-                    <a href="https://github.com/nileshparmar0/University-Management-System-JAVA-" target="_blank" class="button">View on GitHub</a>
-                </div>
-                <div class="project-item">
-                    <img src="images/Catchme-Game.png" alt="API Development Project" class="project-img">
-                    <h3>Catchme Game</h3>
-                    <p>Developed an interactive, real-time game using React for the frontend and Flask for the backend. The game features dynamic user interactions, seamless gameplay logic, and real-time communication between the server and client.</p>
-                    <a href="https://github.com/nileshparmar0/Catchme-Game-React-Flask-" target="_blank" class="button">View on GitHub</a>
-                </div>
-                <div class="project-item">
-                    <img src="images/Ai-Recipe-Recommendor.png" alt="Augmented Reality App" class="project-img">
-                    <h3>AI Recipe Recommender</h3>
-                    <p>Developed an AI-powered recipe generator using Python and NLTK, which suggests recipes based on available ingredients and dietary preferences. Utilized NLP to preprocess ingredients and match them with a database of recipes.</p>
-                    <a href="https://github.com/nileshparmar0/AI-Recipe-Recommender" target="_blank" class="button">View on GitHub</a>
-                </div>
-                <div class="project-item">
-                    <img src="images/Nutri-Meal-Navigator.png" alt="Blockchain Protocol" class="project-img">
-                    <h3>Nutri Meal Navigator</h3>
-                    <p>Created a data science-based application that helps users navigate meal options based on nutritional information. The project leverages data analysis techniques to provide personalized meal recommendations based on dietary preferences and health goals.</p>
-                    <a href="https://github.com/nileshparmar0/Nutri-Meal-Navigator-Data-Science-" target="_blank" class="button">View on GitHub</a>
-                </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              I'm a passionate
+              <span class="highlight">Software Engineer</span> currently
+              pursuing my Master's in Information Systems at Northeastern
+              University. With professional experience at
+              <span class="highlight">NVIDIA</span> and
+              <span class="highlight">Paras Industries</span>, I specialize in
+              building high-performance, scalable applications.
+            </p>
+            <p>
+              My expertise spans full-stack development with
+              <span class="highlight">React.js, Node.js, Java Spring Boot</span
+              >, and <span class="highlight">Python</span>, coupled with strong
+              cloud platform knowledge in <span class="highlight">AWS</span>.
+              I've successfully led teams to achieve
+              <span class="highlight">40% improvements in user engagement</span>
+              and
+              <span class="highlight">35% increases in system efficiency</span>.
+            </p>
+            <p>
+              I'm passionate about creating technology solutions that solve
+              real-world problems and drive meaningful business impact through
+              innovation and optimization.
+            </p>
+          </div>
+
+          <div class="about-skills">
+            <div class="skill-category">
+              <h4>Frontend Development</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">React.js</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">HTML5/CSS3</span>
+                <span class="skill-tag">Redux</span>
+              </div>
             </div>
+
+            <div class="skill-category">
+              <h4>Backend & APIs</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">Java Spring Boot</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Python Flask</span>
+                <span class="skill-tag">RESTful APIs</span>
+                <span class="skill-tag">GraphQL</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4>Databases & Cloud</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">Redis</span>
+                <span class="skill-tag">AWS</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4>DevOps & Tools</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">CI/CD</span>
+                <span class="skill-tag">GitHub Actions</span>
+                <span class="skill-tag">Jest/Cypress</span>
+                <span class="skill-tag">Apache Kafka</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Experience Section -->
     <section id="experience" class="section">
-        <div class="container">
-            <h2>Experience</h2>
-            <div class="experience-item">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Software Engineer - NVIDIA</h3>
-                <p>As a skilled software engineer, I enhanced data management through advanced object-oriented Python programming, streamlined development with version control and CI/CD processes, and reduced deployment time by 20% using Linux shell scripting. I architected scalable Flask solutions, implementing caching and load balancing techniques that improved response times by 30%. Applying Agile methodologies, I led iterative improvements through sprints, stand-ups, and retrospectives, fostering a culture of continuous enhancement in our software development process.</p>
-            </div>
-            <div class="experience-item">
-                <i class="fas fa-server"></i>
-                <h3>Software Engineer - Paras Industries</h3>
-                <p>As a seasoned full-stack developer, I led a team in creating high-performance web applications using React.js, Node.js, and RESTful APIs, resulting in a 40% increase in user engagement and a 25% reduction in load time. I also designed and implemented a robust inventory management system using HTML5, JavaScript, and TypeScript, which automated 60% of manual processes and significantly improved operational efficiency. My expertise in real-time data processing contributed to enhanced efficiency, demonstrating transferable skills applicable to fintech innovations. I implemented a comprehensive automated testing framework using Jest and Cypress, achieving 90% code coverage and reducing post-release bug reports by 40%. Throughout these projects, I utilized Git for version control, ensuring smooth collaboration and effective code management.</p>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-subtitle">
+            Building scalable solutions and leading high-performance development
+            teams
+          </p>
         </div>
+
+        <div class="experience-timeline">
+          <div class="experience-item fade-in">
+            <div class="experience-card">
+              <h3 class="company-name">Paras Industries</h3>
+              <h4 class="job-title">Software Engineer</h4>
+              <p class="job-period">Nov 2022 - Aug 2023</p>
+
+              <div class="achievement">
+                <p class="achievement-text">
+                  Led cross-functional team creating high-performance web
+                  applications with React.js, Node.js, achieving
+                  <span class="metric">40% higher user engagement</span> and
+                  <span class="metric">25% faster load times</span>
+                </p>
+              </div>
+
+              <div class="achievement">
+                <p class="achievement-text">
+                  Designed robust inventory management system automating
+                  <span class="metric">60% of manual processes</span> and
+                  significantly enhancing operational efficiency
+                </p>
+              </div>
+
+              <div class="achievement">
+                <p class="achievement-text">
+                  Implemented automated testing framework (Jest/Cypress)
+                  achieving <span class="metric">90% code coverage</span> and
+                  <span class="metric">40% fewer post-release bugs</span>
+                </p>
+              </div>
+
+              <div class="achievement">
+                <p class="achievement-text">
+                  Optimized database performance with advanced query
+                  optimization and Redis caching, resulting in
+                  <span class="metric">45% faster response times</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="experience-item fade-in">
+            <div class="experience-card">
+              <h3 class="company-name">NVIDIA</h3>
+              <h4 class="job-title">Software Engineer</h4>
+              <p class="job-period">Apr 2021 - Aug 2021</p>
+
+              <div class="achievement">
+                <p class="achievement-text">
+                  Enhanced object-oriented Python algorithms for effective data
+                  management and streamlined development with CI/CD processes
+                </p>
+              </div>
+
+              <div class="achievement">
+                <p class="achievement-text">
+                  Reduced deployment setup time by
+                  <span class="metric">20%</span> using Linux shell scripting
+                  and Bash automation
+                </p>
+              </div>
+
+              <div class="achievement">
+                <p class="achievement-text">
+                  Implemented Redis caching for Kafka consumer offsets,
+                  increasing event throughput and reducing latency by
+                  <span class="metric">40%</span>
+                </p>
+              </div>
+
+              <div class="achievement">
+                <p class="achievement-text">
+                  Architected scalable Flask solutions with caching and load
+                  balancing, improving response times by
+                  <span class="metric">30%</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="experience-item fade-in">
+            <div class="experience-card">
+              <h3 class="company-name">Nimbeshwar</h3>
+              <h4 class="job-title">Technology Consultant</h4>
+              <p class="job-period">Jan 2020 - Mar 2021</p>
+
+              <div class="achievement">
+                <p class="achievement-text">
+                  Led technology stack evaluation and selection process,
+                  analyzing Java Spring Boot, React.js, and MySQL for optimal
+                  enterprise performance
+                </p>
+              </div>
+
+              <div class="achievement">
+                <p class="achievement-text">
+                  Performed AWS cloud platform evaluations delivering
+                  recommendations that improved system efficiency by
+                  <span class="metric">35%</span>
+                </p>
+              </div>
+
+              <div class="achievement">
+                <p class="achievement-text">
+                  Developed CI/CD pipelines using GitHub Actions and Docker,
+                  decreasing deployment cycles by
+                  <span class="metric">40%</span>
+                </p>
+              </div>
+
+              <div class="achievement">
+                <p class="achievement-text">
+                  Designed database indexing strategies reducing MySQL response
+                  times by <span class="metric">40%</span> and improving
+                  application performance
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section bg-light">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <i class="fab fa-python"></i>
-                    <h3>Python</h3>
-                    <p>Advanced proficiency in Python, including experience with Django and Flask.</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Web Development</h3>
-                    <p>Proficient in HTML and CSS for building responsive and interactive websites.</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-js-square"></i>
-                    <h3>JavaScript</h3>
-                    <p>Experienced in JavaScript, including frameworks like React.js, for adding dynamic features and building interactive UIs.</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-java"></i>
-                    <h3>Java</h3>
-                    <p>Proficient in Java for backend development and system architecture.</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-bootstrap"></i>
-                    <h3>Bootstrap</h3>
-                    <p>Experienced in designing responsive web applications using Bootstrap.</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-chart-bar"></i>
-                    <h3>Visualization Tools</h3>
-                    <p>Proficient in creating data visualizations using Power BI and Tableau.</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-database"></i>
-                    <h3>Databases</h3>
-                    <p>Proficient in SQL and NoSQL databases like MongoDB, PostgreSQL, MySQL, and Snowflake.</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-cloud"></i>
-                    <h3>Cloud Services</h3>
-                    <p>Skilled in utilizing AWS and Azure for deploying and managing applications.</p>
-                </div>
-            </div>
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">
+            Innovative solutions showcasing full-stack development and modern
+            technologies
+          </p>
         </div>
+
+        <div class="projects-grid">
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <i class="fas fa-dumbbell"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Fitness Tracker Application</h3>
+              <p class="project-description">
+                Comprehensive fitness tracking web application with React 18,
+                featuring exercise logger, meal tracker, water counter, and
+                real-time animated progress visualizations with statistical
+                charts.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">React 18</span>
+                <span class="tech-tag">Zustand</span>
+                <span class="tech-tag">Recharts</span>
+                <span class="tech-tag">Chart.js</span>
+                <span class="tech-tag">CSS3</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/nileshparmar0/Fitness-Tracker-Using-React"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <i class="fab fa-github"></i>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Social Media Platform</h3>
+              <p class="project-description">
+                Full-featured social media platform with user authentication,
+                real-time messaging, interactive timeline feed, and
+                comprehensive engagement features including photo gallery and
+                emoji reactions.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">jQuery</span>
+                <span class="tech-tag">Responsive Design</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/nileshparmar0/Social-Media-App"
+                  class="project-link"
+                >
+                  <i class="fab fa-github"></i>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <i class="fas fa-prescription-bottle-alt"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">
+                Medical Prescription Delivery System
+              </h3>
+              <p class="project-description">
+                Secure, real-time system using MySQL for data management with
+                comprehensive GUI. Features customer privacy protection and
+                Power BI integration for detailed sales and behavioral
+                analytics.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">GUI Framework</span>
+                <span class="tech-tag">Data Analytics</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/nileshparmar0/Medical-Prescription-Delivery-System"
+                  class="project-link"
+                >
+                  <i class="fab fa-github"></i>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <i class="fas fa-university"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">University Management System</h3>
+              <p class="project-description">
+                Comprehensive management system using Java and MySQL,
+                integrating with police, banks, and cafes for optimized resource
+                allocation with automated restocking solutions.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">System Integration</span>
+                <span class="tech-tag">Automation</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/nileshparmar0/University-Management-System-JAVA-"
+                  class="project-link"
+                >
+                  <i class="fab fa-github"></i>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">AI Recipe Recommender</h3>
+              <p class="project-description">
+                AI-powered recipe generator using Python and NLTK that suggests
+                recipes based on available ingredients and dietary preferences
+                with advanced NLP preprocessing.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">NLTK</span>
+                <span class="tech-tag">AI/ML</span>
+                <span class="tech-tag">NLP</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/nileshparmar0/AI-Recipe-Recommender"
+                  class="project-link"
+                >
+                  <i class="fab fa-github"></i>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section bg-dark">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>If you'd like to get in touch, feel free to reach out via email or through my social profiles.</p>
-            <div class="contact-actions">
-                <a href="mailto:parmar.nil@northeastern.edu" class="button email">Send an Email</a>
-                <div class="social-links">
-                    <a href="https://github.com/nileshparmar0" target="_blank" class="github"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="https://www.linkedin.com/in/nilesh-parmar-/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                </div>
-            </div>
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-subtitle">
+            Ready to collaborate on your next project? Let's build something
+            amazing together.
+          </p>
         </div>
+
+        <div class="contact-info">
+          <div class="contact-item fade-in">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Email</h3>
+            <a href="mailto:parmar.nil@northeastern.edu"
+              >parmar.nil@northeastern.edu</a
+            >
+          </div>
+
+          <div class="contact-item fade-in">
+            <div class="contact-icon">
+              <i class="fab fa-linkedin"></i>
+            </div>
+            <h3>LinkedIn</h3>
+            <a
+              href="https://www.linkedin.com/in/nilesh-parmar-/"
+              target="_blank"
+              >Connect with me</a
+            >
+          </div>
+
+          <div class="contact-item fade-in">
+            <div class="contact-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <h3>GitHub</h3>
+            <a href="https://github.com/nileshparmar0" target="_blank"
+              >View my code</a
+            >
+          </div>
+
+          <div class="contact-item fade-in">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h3>Phone</h3>
+            <a href="tel:+18573794764">+1 (857) 379-4764</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Nilesh Parmar. All rights reserved.</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2024 Nilesh Parmar. Crafted with passion and code.</p>
+      </div>
     </footer>
-</body>
+
+    <script src="script.js"></script>
+  </body>
 </html>
