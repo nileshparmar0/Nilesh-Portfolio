@@ -1,1065 +1,552 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Nilesh Parmar - Software Engineer with 4+ years experience in full-stack development, cloud platforms, and scalable solutions"
-    />
-    <meta
-      property="og:title"
-      content="Nilesh Parmar | Software Engineer Portfolio"
-    />
-    <meta
-      property="og:description"
-      content="Full-Stack Developer specializing in React, Node.js, Python, and cloud solutions"
-    />
-    <meta property="og:type" content="website" />
-    <title>Nilesh Parmar | Software Engineer Portfolio</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <!-- Three.js for 3D Elements -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- GSAP for Advanced Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <meta name="description" content="Nilesh Parmar - Recent MS grad from Northeastern University with 3+ years experience at Nvidia building scalable web applications" />
+    <meta name="keywords" content="Software Engineer, Full Stack Developer, React, Node.js, Python, Java, Nvidia, Northeastern University, AWS, Kubernetes">
+    <meta name="author" content="Nilesh Parmar">
+    <title>Nilesh Parmar | Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Mouse Follower with Trail -->
-    <div class="mouse-follower"></div>
-    <div class="mouse-follower-label">Explore</div>
-    <canvas id="cursor-trail"></canvas>
+</head>
+<body>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <!-- Code Rain Background -->
-    <canvas id="matrix-rain"></canvas>
-
-    <!-- Achievement System -->
-    <div class="achievement-popup" id="achievementPopup">
-      <div class="achievement-icon">🏆</div>
-      <div class="achievement-text">
-        <div class="achievement-title">Achievement Unlocked!</div>
-        <div class="achievement-description"></div>
-      </div>
-    </div>
-
-    <!-- Interactive Timeline Navigator -->
-    <div class="timeline-navigator">
-      <div class="timeline-track">
-        <div class="timeline-progress"></div>
-        <div class="timeline-markers">
-          <div
-            class="timeline-marker"
-            data-year="2019"
-            data-label="Started Journey"
-          ></div>
-          <div
-            class="timeline-marker"
-            data-year="2021"
-            data-label="NVIDIA"
-          ></div>
-          <div
-            class="timeline-marker"
-            data-year="2023"
-            data-label="Masters @ NEU"
-          ></div>
-          <div
-            class="timeline-marker"
-            data-year="2025"
-            data-label="Present"
-          ></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Professional Loading Screen -->
-    <div class="loader-wrapper" id="loader">
-      <div class="loader-content">
-        <div class="loader-logo">
-          <div class="code-loader">
-            <span>&lt;</span>
-            <span>/</span>
-            <span>&gt;</span>
-          </div>
-        </div>
-        <div class="loader-text">
-          <p class="loading-text">Loading Portfolio</p>
-          <div class="progress-bar-loader">
-            <div class="progress-fill"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-
-    <!-- Dark Mode Toggle -->
-    <div class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
-      <i class="fas fa-moon" id="themeIcon"></i>
-    </div>
-
-    <!-- Animated Background with Particles -->
-    <div class="bg-animation">
-      <div class="particles" id="particles"></div>
-    </div>
-
-    <!-- Header Section -->
+    <!-- Header -->
     <header>
-      <div class="container">
-        <!-- 3D Canvas Background -->
-        <div id="hero-3d-canvas"></div>
-
-        <div class="hero-content">
-          <div class="availability-badge magnetic-element">
-            <span class="pulse-dot"></span>
-            Available for Opportunities
-          </div>
-
-          <div class="profile-img holographic">
-            <img src="images/Nilesh.jpg" alt="Nilesh Parmar" />
-            <div class="profile-ring"></div>
-            <div class="profile-particles"></div>
-          </div>
-
-          <h1 class="glitch-text" data-text="Nilesh Parmar">
-            <span class="letter-animate">N</span>
-            <span class="letter-animate">i</span>
-            <span class="letter-animate">l</span>
-            <span class="letter-animate">e</span>
-            <span class="letter-animate">s</span>
-            <span class="letter-animate">h</span>
-            <span class="letter-animate"> </span>
-            <span class="letter-animate">P</span>
-            <span class="letter-animate">a</span>
-            <span class="letter-animate">r</span>
-            <span class="letter-animate">m</span>
-            <span class="letter-animate">a</span>
-            <span class="letter-animate">r</span>
-          </h1>
-          <p class="subtitle">
-            Software Engineer | Full-Stack Developer | Cloud Solutions Architect
-          </p>
-
-          <div class="typed-container">
-            <span class="typed-prefix">I build </span>
-            <span class="typed-text" id="typedText"></span>
-            <span class="cursor">|</span>
-          </div>
-
-          <!-- Animated Stats with Counter -->
-          <div class="stats">
-            <div class="stat-item magnetic-element">
-              <span class="stat-number counter" data-target="4">0</span>
-              <span class="stat-number">+</span>
-              <span class="stat-label">Years Experience</span>
-            </div>
-            <div class="stat-item magnetic-element">
-              <span class="stat-number counter" data-target="6">0</span>
-              <span class="stat-number">+</span>
-              <span class="stat-label">Major Projects</span>
-            </div>
-            <div class="stat-item magnetic-element">
-              <span class="stat-number counter" data-target="40">0</span>
-              <span class="stat-number">%</span>
-              <span class="stat-label">Performance Boost</span>
-            </div>
-            <div class="stat-item magnetic-element">
-              <span class="stat-number counter" data-target="35">0</span>
-              <span class="stat-number">%</span>
-              <span class="stat-label">System Efficiency</span>
-            </div>
-          </div>
-
-          <nav class="magnetic-nav">
-            <ul>
-              <li>
-                <a
-                  href="#about"
-                  class="nav-link magnetic-element"
-                  data-sound="hover"
-                >
-                  <span class="nav-icon">👤</span>
-                  <span>About</span>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-img">
+                    <img src="images/Nilesh.jpg" alt="Nilesh Parmar" />
+                </div>
+                <h1>Nilesh Parmar</h1>
+                <p class="title">Software Engineer | Full-Stack Developer</p>
+                <div class="status">Available for Opportunities</div>
+                <div class="contact-links">
+                    <a href="mailto:nilesh097parmar@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        Email Me
+                    </a>
+                    <a href="https://www.linkedin.com/in/nilesh-parmar-/" target="_blank" class="contact-link secondary">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/nileshparmar0" target="_blank" class="contact-link secondary">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                </div>
+                
+                <!-- Download Resume Button -->
+                <a href="Resume/Nilesh Resume.pdf" download="Nilesh_Parmar_Resume.pdf" class="contact-link download-resume">
+                    <i class="fas fa-download"></i>
+                    Download Resume
                 </a>
-              </li>
-              <li>
-                <a
-                  href="#experience"
-                  class="nav-link magnetic-element"
-                  data-sound="hover"
-                >
-                  <span class="nav-icon">💼</span>
-                  <span>Experience</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#projects"
-                  class="nav-link magnetic-element"
-                  data-sound="hover"
-                >
-                  <span class="nav-icon">🚀</span>
-                  <span>Projects</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  class="nav-link magnetic-element"
-                  data-sound="hover"
-                >
-                  <span class="nav-icon">📬</span>
-                  <span>Contact</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          <div class="hero-cta">
-            <a href="#contact" class="cta-button primary liquid-button">
-              <span class="button-text">Hire Me</span>
-              <span class="button-liquid"></span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-            <a
-              href="https://github.com/nileshparmar0"
-              target="_blank"
-              class="cta-button secondary liquid-button"
-            >
-              <i class="fab fa-github"></i>
-              <span class="button-text">View GitHub</span>
-              <span class="button-liquid"></span>
-            </a>
-          </div>
-
-          <!-- Voice Command Indicator -->
-          <div class="voice-command-hint">
-            <i class="fas fa-microphone"></i>
-            <span>Press 'V' for voice commands</span>
-          </div>
+            </div>
         </div>
-      </div>
     </header>
 
+    <!-- Quick Stats Banner -->
+    <div class="quick-stats-banner">
+        <div class="container">
+            <div class="quick-stats">
+                <div class="quick-stat-item fade-in-up">
+                    <div class="stat-icon">💼</div>
+                    <div class="stat-content">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+                <div class="quick-stat-item fade-in-up">
+                    <div class="stat-icon">🏢</div>
+                    <div class="stat-content">
+                        <div class="stat-number">Nvidia</div>
+                        <div class="stat-label">Former Company</div>
+                    </div>
+                </div>
+                <div class="quick-stat-item fade-in-up">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-content">
+                        <div class="stat-number">40K+</div>
+                        <div class="stat-label">Users Handled</div>
+                    </div>
+                </div>
+                <div class="quick-stat-item fade-in-up">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-content">
+                        <div class="stat-number">57%</div>
+                        <div class="stat-label">Performance Boost</div>
+                    </div>
+                </div>
+                <div class="quick-stat-item fade-in-up">
+                    <div class="stat-icon">🎓</div>
+                    <div class="stat-content">
+                        <div class="stat-number">MS</div>
+                        <div class="stat-label">Northeastern Grad</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#highlights">Highlights</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- About Section -->
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">About Me</h2>
-          <p class="section-subtitle">
-            Software engineer with 4+ years of experience building scalable web
-            applications and cloud solutions
-          </p>
+    <section id="about" class="fade-in-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="summary">
+                <p>
+                    Software Engineer with <span class="highlight">3+ years at Nvidia and high-growth startups</span>, specializing in <span class="highlight">scalable distributed systems</span> and <span class="highlight">payment infrastructure</span>. Proven track record of <span class="highlight">reducing latency by 75%</span> and handling <span class="highlight">40K+ concurrent users</span> during peak traffic with 100% uptime.
+                </p>
+                <p>
+                    <span class="highlight">Recent graduate from Northeastern University (MS in Information Systems)</span> with expertise in system design, microservices architecture, and cloud infrastructure (AWS, Kubernetes). Passionate about building <span class="highlight">high-performance, fault-tolerant systems</span> that scale to millions of users while maintaining sub-second response times.
+                </p>
+            </div>
         </div>
+    </section>
 
-        <div class="about-content">
-          <div class="about-text">
-            <p>
-              I'm a passionate
-              <span class="highlight">Software Engineer</span> with over 4 years
-              of experience building scalable online applications and optimizing
-              systems in the <span class="highlight">e-commerce</span>,
-              <span class="highlight">banking</span>, and
-              <span class="highlight">technology industries</span>. Currently
-              pursuing my Master's in Information Systems at
-              <span class="highlight">Northeastern University</span>, I have a
-              proven track record of leading cross-functional teams and
-              delivering solutions that increased system performance by
-              <span class="highlight">30-50%</span>, reduced deployment time,
-              and increased user engagement by up to
-              <span class="highlight">38%</span>.
-            </p>
-            <p>
-              My expertise spans
-              <span class="highlight">full-stack development</span> in
-              <span class="highlight">Java</span>,
-              <span class="highlight">Python</span>,
-              <span class="highlight">React.js</span>,
-              <span class="highlight">Node.js</span>, and
-              <span class="highlight">cloud technologies</span>, with extensive
-              experience in both technical leadership and individual contributor
-              positions. At <span class="highlight">NVIDIA</span>,
-              <span class="highlight">Paras Industries</span>, and
-              <span class="highlight">Nimbeshwar</span>, I've successfully
-              architected enterprise-scale systems, optimized high-throughput
-              data pipelines, and implemented automated CI/CD workflows.
-            </p>
-            <p>
-              I specialize in delivering
-              <span class="highlight"
-                >high-performance, scalable applications</span
-              >
-              and providing
-              <span class="highlight">strategic technology consulting</span>. My
-              achievements include improving development tool performance by
-              <span class="highlight">44%</span>, reducing software deployment
-              cycles by <span class="highlight">55%</span>, and establishing
-              development standards that reduced post-release bugs by
-              <span class="highlight">40%</span>. I'm passionate about
-              leveraging cutting-edge technology to solve complex challenges and
-              deliver measurable business value through innovation.
-            </p>
-          </div>
-
-          <div class="about-skills">
-            <div class="skill-category">
-              <h4><i class="fas fa-laptop-code"></i> Frontend Development</h4>
-              <div class="skill-tags">
-                <span class="skill-tag">React.js</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">TypeScript</span>
-                <span class="skill-tag">HTML5/CSS3</span>
-                <span class="skill-tag">JSON</span>
-              </div>
+    <!-- Technical Highlights Section -->
+    <section id="highlights" class="fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Technical Highlights</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-icon">🎯</div>
+                    <h3>Scale</h3>
+                    <p>Handled 40K+ concurrent users with 100% uptime during peak traffic (20x normal load)</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">⚡</div>
+                    <h3>Performance</h3>
+                    <p>Reduced page load time from 7s to 3s (57% improvement) and API response by 75%</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">💰</div>
+                    <h3>Revenue Impact</h3>
+                    <p>Increased daily revenue by ₹6K through payment optimization (₹50L+ during festivals)</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🔧</div>
+                    <h3>System Reliability</h3>
+                    <p>Achieved 99% inventory accuracy with <5s latency and 77% code coverage</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">👨‍💻</div>
+                    <h3>Developer Productivity</h3>
+                    <p>Cut compilation time by 14 min and reduced developer ramp-up from 2 weeks to 4 days</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">💸</div>
+                    <h3>Cost Optimization</h3>
+                    <p>Reduced deployment cycles by 55% and server costs by 30% through architecture improvements</p>
+                </div>
             </div>
-
-            <div class="skill-category">
-              <h4><i class="fas fa-server"></i> Backend & APIs</h4>
-              <div class="skill-tags">
-                <span class="skill-tag">Java Spring Boot</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Python Flask</span>
-                <span class="skill-tag">RESTful APIs</span>
-                <span class="skill-tag">GraphQL</span>
-                <span class="skill-tag">Go</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h4><i class="fas fa-database"></i> Databases & Cloud</h4>
-              <div class="skill-tags">
-                <span class="skill-tag">MySQL</span>
-                <span class="skill-tag">PostgreSQL</span>
-                <span class="skill-tag">MongoDB</span>
-                <span class="skill-tag">Redis</span>
-                <span class="skill-tag">AWS</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h4><i class="fas fa-cogs"></i> DevOps & Tools</h4>
-              <div class="skill-tags">
-                <span class="skill-tag">Docker</span>
-                <span class="skill-tag">CI/CD</span>
-                <span class="skill-tag">GitHub Actions</span>
-                <span class="skill-tag">Jest/Cypress</span>
-                <span class="skill-tag">Apache Kafka</span>
-                <span class="skill-tag">JIRA</span>
-              </div>
-            </div>
-          </div>
         </div>
+    </section>
 
-        <!-- Tech Stack Visualization -->
-        <div class="tech-stack-section">
-          <h3 class="tech-stack-title">My Tech Arsenal</h3>
-          <div class="tech-stack-grid">
-            <div class="tech-item" data-category="frontend">
-              <div class="tech-icon">⚛️</div>
-              <span>React</span>
-              <div class="tech-level">Expert</div>
+    <!-- Skills Section - Visual Display -->
+    <section id="skills" class="fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">Technologies I use to build scalable systems</p>
+            
+            <div class="skills-visual">
+                <div class="skill-row">
+                    <div class="skill-info">
+                        <span class="skill-name">Java & Spring Boot</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-row">
+                    <div class="skill-info">
+                        <span class="skill-name">Python & Flask</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-row">
+                    <div class="skill-info">
+                        <span class="skill-name">React.js & Node.js</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 92%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-row">
+                    <div class="skill-info">
+                        <span class="skill-name">JavaScript & TypeScript</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 88%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-row">
+                    <div class="skill-info">
+                        <span class="skill-name">AWS & Cloud Infrastructure</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-row">
+                    <div class="skill-info">
+                        <span class="skill-name">Kubernetes & Docker</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 83%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-row">
+                    <div class="skill-info">
+                        <span class="skill-name">MySQL & PostgreSQL</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 88%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-row">
+                    <div class="skill-info">
+                        <span class="skill-name">Redis & Caching Strategies</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 87%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-row">
+                    <div class="skill-info">
+                        <span class="skill-name">System Design & Architecture</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 84%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-row">
+                    <div class="skill-info">
+                        <span class="skill-name">CI/CD & DevOps</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 86%"></div>
+                    </div>
+                </div>
             </div>
-            <div class="tech-item" data-category="backend">
-              <div class="tech-icon">☕</div>
-              <span>Java</span>
-              <div class="tech-level">Expert</div>
+
+            <!-- All Technologies -->
+            <div class="all-skills">
+                <h3>Complete Technology Toolkit</h3>
+                <div class="skill-tags-all">
+                    <span class="skill-tag-inline">Java</span>
+                    <span class="skill-tag-inline">Python</span>
+                    <span class="skill-tag-inline">JavaScript</span>
+                    <span class="skill-tag-inline">TypeScript</span>
+                    <span class="skill-tag-inline">Go</span>
+                    <span class="skill-tag-inline">SQL</span>
+                    <span class="skill-tag-inline">React.js</span>
+                    <span class="skill-tag-inline">Node.js</span>
+                    <span class="skill-tag-inline">Spring Boot</span>
+                    <span class="skill-tag-inline">Flask</span>
+                    <span class="skill-tag-inline">Express.js</span>
+                    <span class="skill-tag-inline">HTML5</span>
+                    <span class="skill-tag-inline">CSS3</span>
+                    <span class="skill-tag-inline">Bootstrap</span>
+                    <span class="skill-tag-inline">Angular</span>
+                    <span class="skill-tag-inline">Redux</span>
+                    <span class="skill-tag-inline">MySQL</span>
+                    <span class="skill-tag-inline">PostgreSQL</span>
+                    <span class="skill-tag-inline">MongoDB</span>
+                    <span class="skill-tag-inline">Redis</span>
+                    <span class="skill-tag-inline">SQL Server</span>
+                    <span class="skill-tag-inline">AWS</span>
+                    <span class="skill-tag-inline">Kubernetes</span>
+                    <span class="skill-tag-inline">Docker</span>
+                    <span class="skill-tag-inline">CI/CD</span>
+                    <span class="skill-tag-inline">Git</span>
+                    <span class="skill-tag-inline">GitHub Actions</span>
+                    <span class="skill-tag-inline">REST API</span>
+                    <span class="skill-tag-inline">GraphQL</span>
+                    <span class="skill-tag-inline">Microservices</span>
+                    <span class="skill-tag-inline">System Design</span>
+                    <span class="skill-tag-inline">Jest</span>
+                    <span class="skill-tag-inline">Cypress</span>
+                    <span class="skill-tag-inline">CloudWatch</span>
+                    <span class="skill-tag-inline">CloudFront</span>
+                    <span class="skill-tag-inline">Apache Kafka</span>
+                    <span class="skill-tag-inline">JIRA</span>
+                </div>
             </div>
-            <div class="tech-item" data-category="backend">
-              <div class="tech-icon">🟢</div>
-              <span>Node.js</span>
-              <div class="tech-level">Expert</div>
-            </div>
-            <div class="tech-item" data-category="backend">
-              <div class="tech-icon">🐍</div>
-              <span>Python</span>
-              <div class="tech-level">Advanced</div>
-            </div>
-            <div class="tech-item" data-category="cloud">
-              <div class="tech-icon">☁️</div>
-              <span>AWS</span>
-              <div class="tech-level">Advanced</div>
-            </div>
-            <div class="tech-item" data-category="database">
-              <div class="tech-icon">🗄️</div>
-              <span>MySQL</span>
-              <div class="tech-level">Expert</div>
-            </div>
-            <div class="tech-item" data-category="devops">
-              <div class="tech-icon">🐳</div>
-              <span>Docker</span>
-              <div class="tech-level">Advanced</div>
-            </div>
-            <div class="tech-item" data-category="ai">
-              <div class="tech-icon">🤖</div>
-              <span>AI/ML</span>
-              <div class="tech-level">Growing</div>
-            </div>
-            <div class="tech-item" data-category="database">
-              <div class="tech-icon">⚡</div>
-              <span>Redis</span>
-              <div class="tech-level">Advanced</div>
-            </div>
-            <div class="tech-item" data-category="backend">
-              <div class="tech-icon">🍃</div>
-              <span>Spring Boot</span>
-              <div class="tech-level">Expert</div>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Professional Experience</h2>
-          <p class="section-subtitle">
-            Building scalable solutions and leading high-performance development
-            teams
-          </p>
-        </div>
+    <section id="experience" class="fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">Paras Industries, India</div>
+                        <div class="role">Software Engineer</div>
+                        <div class="period">September 2021 - August 2023</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Resolved B2C e-commerce platform's payment failures affecting 10% of 2K daily users by implementing UPI retry logic with Jest test suites and Redis-based session caching, boosting successful checkouts from 50 to 70 daily (+₹6K additional revenue/day)</li>
+                        <li>Fixed React-based shopping portal's 7-second page loads causing 45% cart abandonment by implementing code-splitting and CloudFront CDN, reducing page load time to 3 seconds and improving conversion rate from 2.5% to 3.5%</li>
+                        <li>Eliminated multi-vendor marketplace's inventory overselling impacting 8-10 orders daily (20% of total) by building real-time webhook synchronization between WMS and frontend, accomplishing 99% stock accuracy with <5 second update latency</li>
+                        <li>Prevented e-commerce platform crashes during 20x traffic spikes (40K users on Diwali) by applying Kubernetes horizontal scaling and Redis cache prewarming, maintaining 100% uptime during ₹50L festival transactions</li>
+                        <li>Set up application monitoring using CloudWatch metrics and custom error tracking for payment flows, creating alerts for >5% failure rates and >3s response times, reducing incident detection time from 30 minutes to 2 minutes</li>
+                    </ul>
+                </div>
 
-        <!-- Achievement Cards -->
-        <div class="achievement-cards">
-          <div class="achievement-card">
-            <div class="achievement-icon">🎯</div>
-            <div class="achievement-value" data-target="40">0%</div>
-            <div class="achievement-label">Performance Improved</div>
-          </div>
-          <div class="achievement-card">
-            <div class="achievement-icon">⚡</div>
-            <div class="achievement-value" data-target="90">0%</div>
-            <div class="achievement-label">Code Coverage</div>
-          </div>
-          <div class="achievement-card">
-            <div class="achievement-icon">🚀</div>
-            <div class="achievement-value" data-target="45">0%</div>
-            <div class="achievement-label">Faster Response</div>
-          </div>
-          <div class="achievement-card">
-            <div class="achievement-icon">📈</div>
-            <div class="achievement-value" data-target="35">0%</div>
-            <div class="achievement-label">System Efficiency</div>
-          </div>
-        </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">Nvidia, India</div>
+                        <div class="role">Software Engineer</div>
+                        <div class="period">April 2021 - August 2021</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Contributed to GPU driver testing framework by writing 150+ Python unit tests and fixing race conditions, enhancing code coverage from 63% to 77%</li>
+                        <li>Developed an internal dashboard using Python Flask to visualize build metrics and test results, reducing time to identify failing tests by 40%</li>
+                        <li>Improved development team's build scripts using parallel processing and caching strategies, cutting average compilation time by 14 minutes</li>
+                        <li>Located and fixed 3 memory leaks in internal tools using memory_profiler, preventing daily crashes affecting 20+ developers</li>
+                        <li>Documented testing best practices and build optimization techniques in team wiki; created onboarding guide for Python testing tools that reduced new developer ramp-up time from 2 weeks to 4 days</li>
+                    </ul>
+                </div>
 
-        <div class="experience-timeline">
-          <div class="experience-item fade-in">
-            <div class="experience-card">
-              <h3 class="company-name">Paras Industries, INDIA</h3>
-              <h4 class="job-title">Software Engineer</h4>
-              <p class="job-period">Sep 2021 - Aug 2023</p>
-
-              <div class="achievement">
-                <p class="achievement-text">
-                  • Led 8-person cross-functional development team to deliver
-                  high-performance e-commerce web applications using
-                  <span class="metric">React.js, Node.js,</span> and
-                  <span class="metric">RESTful APIs</span>, achieving 38% higher
-                  user engagement and 25% lower page load times across 6-month
-                  project lifecycle.
-                </p>
-              </div>
-
-              <div class="achievement">
-                <p class="achievement-text">
-                  • Architected and oversaw development of inventory management
-                  system for multi-location retail chain using
-                  <span class="metric">JavaScript, TypeScript,</span> and
-                  <span class="metric">HTTP request handling </span>
-                  to track 12K+ SKUs (Stock Keeping Units) across 24 store
-                  locations for real-time data synchronization, resulting in 60%
-                  automation of manual processes and 35% improvement in
-                  operational efficiency.
-                </p>
-              </div>
-
-              <div class="achievement">
-                <p class="achievement-text">
-                  • Directed system performance optimization initiatives for
-                  high-traffic e-commerce platform that improved throughput by
-                  42% through
-                  <span class="metric"
-                    >Redis caching, PostgreSQL optimization,</span
-                  >
-                  and <span class="metric">query tuning</span>, enabling
-                  scalable solutions supporting 200K+ monthly transactions.
-                </p>
-              </div>
-
-              <div class="achievement">
-                <p class="achievement-text">
-                  • Established team development standards across 3 product
-                  development teams including automated
-                  <span class="metric">testing frameworks (Jest/Cypress)</span>
-                  with 90% code coverage and
-                  <span class="metric">Git </span>workflows supporting 32+
-                  weekly deployments, reducing post-release bugs by 40% and code
-                  conflicts by 60%.
-                </p>
-              </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">Nimbeshwar Technologies, India</div>
+                        <div class="role">Technology Consultant</div>
+                        <div class="period">April 2020 - March 2021</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Analyzed fintech client's Java Spring Boot application handling 5K daily transactions, documented bottlenecks and proposed microservices approach that could reduce server costs by 20-30%</li>
+                        <li>Built proof-of-concept payment API using Node.js Express demonstrating 4x faster response times (200ms vs 800ms) compared to existing PHP system</li>
+                        <li>Assisted in setting up GitHub Actions for automated testing and Docker containerization, helping reduce deployment time from 3 hours to 45 minutes</li>
+                        <li>Analyzed database performance bottlenecks using MySQL slow query log and experimented with indexing strategies and Redis caching in test environment, achieving 4x improvement potential</li>
+                        <li>Prepared technical feasibility report with cost-benefit analysis and migration roadmap for client, presenting POC results and architectural recommendations to stakeholder team of 5 members</li>
+                    </ul>
+                </div>
             </div>
-          </div>
-
-          <div class="experience-item fade-in">
-            <div class="experience-card">
-              <h3 class="company-name">NVIDIA, INDIA</h3>
-              <h4 class="job-title">Software Engineer</h4>
-              <p class="job-period">Apr 2021 - Aug 2021</p>
-
-              <div class="achievement">
-                <p class="achievement-text">
-                  • Improved development tool performance by 44% and reduced
-                  build time by 30% for software development environments
-                  processing 300K+ code compilation operations by developing
-                  optimization components using
-                  <span class="metric"> Python</span>.
-                </p>
-              </div>
-
-              <div class="achievement">
-                <p class="achievement-text">
-                  • Reduced software deployment cycles by 55% and production
-                  incidents by 33% for development tool releases by enhancing
-                  processes through
-                  <span class="metric"> CI/CD pipeline</span> improvements,
-                  automated
-                  <span class="metric">
-                    testing frameworks, Linux shell scripting,</span
-                  >
-                  and <span class="metric"> containerization</span>.
-                </p>
-              </div>
-
-              <div class="achievement">
-                <p class="achievement-text">
-                  • Improved hardware testing throughput by 42% and reduced
-                  system latency by 38% by implementing
-                  <span class="metric"> Redis caching</span> layer for automated
-                  testing pipeline management, eliminating redundant test runs
-                  and optimizing resource utilization.
-                </p>
-              </div>
-
-              <div class="achievement">
-                <p class="achievement-text">
-                  • Achieved 32% improvement in API response times by building
-                  hardware testing framework features with optimized
-                  <span class="metric"> memory management</span> and
-                  <span class="metric"> load balancing</span> using
-                  <span class="metric"> Agile</span> development practices.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="experience-item fade-in">
-            <div class="experience-card">
-              <h3 class="company-name">Nimbeshwar, INDIA</h3>
-              <h4 class="job-title">Technology Consultant</h4>
-              <p class="job-period">Apr 2019 - Mar 2021</p>
-
-              <div class="achievement">
-                <p class="achievement-text">
-                  • Led fintech client technology stack evaluation and selection
-                  process, resulting in 25% improved system architecture
-                  efficiency and reduced infrastructure costs by 34%, by
-                  analyzing
-                  <span class="metric"> Java Spring Boot</span> microservices,
-                  <span class="metric"> React.js</span> frontend, and
-                  <span class="metric"> MySQL</span> architecture to ensure
-                  optimal performance and scalability for customer payment
-                  processing applications.
-                </p>
-              </div>
-
-              <div class="achievement">
-                <p class="achievement-text">
-                  • Developed and benchmarked
-                  <span class="metric">RESTful APIs</span> in
-                  <span class="metric"> Go</span> and
-                  <span class="metric"> Node.js</span> on
-                  <span class="metric"> AWS cloud platform</span> for fintech
-                  client's payment gateway, delivering recommendations that
-                  increased transaction processing efficiency by 38% and enabled
-                  seamless frontend-backend integration.
-                </p>
-              </div>
-
-              <div class="achievement">
-                <p class="achievement-text">
-                  • Implemented
-                  <span class="metric"> CI/CD pipelines</span> using
-                  <span class="metric"> GitHub Actions</span> and
-                  <span class="metric"> Docker</span> for fintech client's
-                  payment platform deployment processes, reducing deployment
-                  cycles by 46% while integrating
-                  <span class="metric"> JWT authentication</span> protocols to
-                  prevent security vulnerabilities.
-                </p>
-              </div>
-
-              <div class="achievement">
-                <p class="achievement-text">
-                  • Optimized database performance for fintech client's payment
-                  transaction database through
-                  <span class="metric"> MySQL query optimization</span> and
-                  <span class="metric"> indexing strategies</span>, achieving
-                  48% faster response time and establishing coding standards
-                  that reduced production errors by 35%.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Featured Projects</h2>
-          <p class="section-subtitle">
-            Innovative solutions showcasing full-stack development and modern
-            technologies
-          </p>
+    <section id="projects" class="fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-brain"></i></div>
+                    <h3 class="project-title">Academic Research Assistant Chatbot</h3>
+                    <p class="project-description">
+                        Developed a distributed Academic Research Assistant utilizing the Akka Actor Model with 6 specialized actors per node. Implemented RAG pipeline with Qdrant vector database and Ollama LLMs for natural language querying across research publications with response times <2 seconds.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Akka Actor Model</span>
+                        <span class="tech-tag">Qdrant</span>
+                        <span class="tech-tag">Ollama LLMs</span>
+                        <span class="tech-tag">Java Swing</span>
+                        <span class="tech-tag">REST API</span>
+                    </div>
+                    <a href="https://github.com/nileshparmar0/Academic-Research-Assistant-Chatbot" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-users"></i></div>
+                    <h3 class="project-title">Social Media Application</h3>
+                    <p class="project-description">
+                        Created comprehensive social media platform using Django and Python backend with Bootstrap frontend, implementing user authentication, profile management, post creation/editing, commenting system, and real-time notifications for community engagement.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                    <a href="https://github.com/nileshparmar0/Social-Media-App" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-dumbbell"></i></div>
+                    <h3 class="project-title">Fitness Tracker Application</h3>
+                    <p class="project-description">
+                        Built comprehensive fitness tracking application using React.js, Zustand state management, and Recharts visualization library. Implemented real-time data visualization with Chart.js enabling users to track workout progress, calorie metrics, and hydration levels.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">Zustand</span>
+                        <span class="tech-tag">Recharts</span>
+                        <span class="tech-tag">Chart.js</span>
+                    </div>
+                    <a href="https://github.com/nileshparmar0/Fitness-Tracker-Using-React" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="projects-grid">
-          <div class="project-card fade-in">
-            <div class="project-image">
-              <i class="fas fa-dumbbell"></i>
+    <!-- Education Section -->
+    <section id="education" class="fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-list">
+                <div class="education-item">
+                    <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="education-content">
+                        <h3 class="degree">Master of Science in Information Systems</h3>
+                        <p class="school">Northeastern University</p>
+                        <p class="location">Boston, MA</p>
+                        <p class="edu-period">September 2023 - August 2025</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="education-content">
+                        <h3 class="degree">Bachelor of Engineering in Electronics & Telecommunication</h3>
+                        <p class="school">University of Mumbai</p>
+                        <p class="location">Mumbai, India</p>
+                        <p class="edu-period">September 2015 - November 2020</p>
+                    </div>
+                </div>
             </div>
-            <div class="project-content">
-              <h3 class="project-title">Fitness Tracker Application</h3>
-              <p class="project-description">
-                Comprehensive fitness tracking web application with React 18,
-                featuring exercise logger, meal tracker, water counter, and
-                real-time animated progress visualizations with statistical
-                charts.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">React 18</span>
-                <span class="tech-tag">Zustand</span>
-                <span class="tech-tag">Recharts</span>
-                <span class="tech-tag">Chart.js</span>
-                <span class="tech-tag">CSS3</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/nileshparmar0/Fitness-Tracker-Using-React"
-                  target="_blank"
-                  class="project-link"
-                >
-                  <i class="fab fa-github"></i>
-                  GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card fade-in">
-            <div class="project-image">
-              <i class="fas fa-users"></i>
-            </div>
-            <div class="project-content">
-              <h3 class="project-title">Social Media Platform</h3>
-              <p class="project-description">
-                Full-featured social media platform with user authentication,
-                real-time messaging, interactive timeline feed, and
-                comprehensive engagement features including photo gallery and
-                emoji reactions.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">HTML5</span>
-                <span class="tech-tag">CSS3</span>
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">jQuery</span>
-                <span class="tech-tag">Responsive Design</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/nileshparmar0/Social-Media-App"
-                  target="_blank"
-                  class="project-link"
-                >
-                  <i class="fab fa-github"></i>
-                  GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card fade-in">
-            <div class="project-image">
-              <i class="fas fa-prescription-bottle-alt"></i>
-            </div>
-            <div class="project-content">
-              <h3 class="project-title">
-                Medical Prescription Delivery System
-              </h3>
-              <p class="project-description">
-                Secure, real-time system using MySQL for data management with
-                comprehensive GUI. Features customer privacy protection and
-                Power BI integration for detailed sales and behavioral
-                analytics.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">Power BI</span>
-                <span class="tech-tag">GUI Framework</span>
-                <span class="tech-tag">Data Analytics</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/nileshparmar0/Medical-Prescription-Delivery-System"
-                  target="_blank"
-                  class="project-link"
-                >
-                  <i class="fab fa-github"></i>
-                  GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card fade-in">
-            <div class="project-image">
-              <i class="fas fa-university"></i>
-            </div>
-            <div class="project-content">
-              <h3 class="project-title">University Management System</h3>
-              <p class="project-description">
-                Comprehensive management system using Java and MySQL,
-                integrating with police, banks, and cafes for optimized resource
-                allocation with automated restocking solutions.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">Java</span>
-                <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">System Integration</span>
-                <span class="tech-tag">Automation</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/nileshparmar0/University-Management-System-JAVA-"
-                  target="_blank"
-                  class="project-link"
-                >
-                  <i class="fab fa-github"></i>
-                  GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card fade-in">
-            <div class="project-image">
-              <i class="fas fa-robot"></i>
-            </div>
-            <div class="project-content">
-              <h3 class="project-title">AI Recipe Recommender</h3>
-              <p class="project-description">
-                AI-powered recipe generator using Python and NLTK that suggests
-                recipes based on available ingredients and dietary preferences
-                with advanced NLP preprocessing.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">NLTK</span>
-                <span class="tech-tag">AI/ML</span>
-                <span class="tech-tag">NLP</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/nileshparmar0/AI-Recipe-Recommender"
-                  target="_blank"
-                  class="project-link"
-                >
-                  <i class="fab fa-github"></i>
-                  GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card fade-in">
-            <div class="project-image">
-              <i class="fas fa-brain"></i>
-            </div>
-            <div class="project-content">
-              <h3 class="project-title">Academic Research Assistant Chatbot</h3>
-              <p class="project-description">
-                Distributed research assistant using Akka Actor Model with 6
-                specialized actors per node. Features RAG pipeline with Qdrant
-                vector database and Ollama LLMs for natural language querying
-                across research publications with <2 second response times.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">Akka Actor Model</span>
-                <span class="tech-tag">Qdrant</span>
-                <span class="tech-tag">Ollama LLMs</span>
-                <span class="tech-tag">Java Swing</span>
-                <span class="tech-tag">REST API</span>
-                <span class="tech-tag">RAG Pipeline</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/nileshparmar0/Academic-Research-Assistant-Chatbot"
-                  target="_blank"
-                  class="project-link"
-                >
-                  <i class="fab fa-github"></i>
-                  GitHub
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Resume</h2>
+            <p class="section-subtitle">View or download my complete resume</p>
+            
+            <div class="resume-actions">
+                <a href="Resume/Nilesh Resume.pdf" download="Nilesh_Parmar_Resume.pdf" class="contact-link download-resume">
+                    <i class="fas fa-download"></i>
+                    Download PDF
+                </a>
+                <a href="Resume/Nilesh Resume.pdf" target="_blank" class="contact-link secondary">
+                    <i class="fas fa-external-link-alt"></i>
+                    Open in New Tab
+                </a>
+            </div>
+
+            <div class="resume-preview">
+                <iframe src="Resume/Nilesh Resume.pdf" width="100%" height="800px" frameborder="0"></iframe>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Let's Connect</h2>
-          <p class="section-subtitle">
-            Ready to collaborate on your next project? Let's build something
-            amazing together.
-          </p>
+    <section id="contact" class="fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Email</h3>
+                    <a href="mailto:nilesh097parmar@gmail.com">nilesh097parmar@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/nilesh-parmar-/" target="_blank">Connect with me</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-github"></i></div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/nileshparmar0" target="_blank">View my code</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <h3>Phone</h3>
+                    <a href="tel:+18573794764">+1 (857) 379-4764</a>
+                </div>
+            </div>
         </div>
-
-        <!-- Contact CTA -->
-        <div class="contact-cta-banner">
-          <div class="cta-content">
-            <h3 class="cta-title">
-              <span class="gradient-text">Currently Available</span> for
-              Full-Time Opportunities
-            </h3>
-            <p class="cta-description">
-              Looking for a passionate Software Engineer who can deliver
-              results? Let's discuss how I can contribute to your team's
-              success.
-            </p>
-            <div class="cta-buttons">
-              <a
-                href="mailto:parmar.nil@northeastern.edu"
-                class="cta-btn-primary"
-              >
-                <i class="fas fa-envelope"></i>
-                Send an Email
-              </a>
-              <a
-                href="https://www.linkedin.com/in/nilesh-parmar-/"
-                target="_blank"
-                class="cta-btn-secondary"
-              >
-                <i class="fab fa-linkedin"></i>
-                Connect on LinkedIn
-              </a>
-            </div>
-          </div>
-          <div class="cta-decoration">
-            <div class="floating-shapes">
-              <div class="shape shape-1"></div>
-              <div class="shape shape-2"></div>
-              <div class="shape shape-3"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-info">
-          <div class="contact-item fade-in">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <h3>Email</h3>
-            <a href="mailto:parmar.nil@northeastern.edu"
-              >parmar.nil@northeastern.edu</a
-            >
-          </div>
-
-          <div class="contact-item fade-in">
-            <div class="contact-icon">
-              <i class="fab fa-linkedin"></i>
-            </div>
-            <h3>LinkedIn</h3>
-            <a
-              href="https://www.linkedin.com/in/nilesh-parmar-/"
-              target="_blank"
-              >Connect with me</a
-            >
-          </div>
-
-          <div class="contact-item fade-in">
-            <div class="contact-icon">
-              <i class="fab fa-github"></i>
-            </div>
-            <h3>GitHub</h3>
-            <a href="https://github.com/nileshparmar0" target="_blank"
-              >View my code</a
-            >
-          </div>
-
-          <div class="contact-item fade-in">
-            <div class="contact-icon">
-              <i class="fas fa-phone"></i>
-            </div>
-            <h3>Phone</h3>
-            <a href="tel:+18573794764">+1 (857) 379-4764</a>
-          </div>
-        </div>
-      </div>
     </section>
+
+    <!-- ATS Keywords (Hidden) -->
+    <div class="ats-keywords">
+        Software Engineer, Full Stack Developer, Senior Software Engineer, React.js, Node.js, 
+        Python, Java, JavaScript, TypeScript, Go, Spring Boot, Flask, Express.js, Django,
+        AWS, Amazon Web Services, Kubernetes, Docker, CI/CD, DevOps, Jenkins, GitHub Actions,
+        Microservices, System Design, Distributed Systems, REST API, RESTful APIs, GraphQL,
+        MySQL, PostgreSQL, MongoDB, Redis, SQL Server, Database Design, NoSQL,
+        Payment Systems, E-commerce, Payment Gateway, UPI, Payment Processing,
+        Performance Optimization, Scalability, High Availability, Load Balancing,
+        Cloud Architecture, Cloud Computing, Serverless, Lambda, EC2, S3, CloudFront,
+        Agile, Scrum, JIRA, Git, Version Control, Code Review,
+        Unit Testing, Jest, Cypress, Test-Driven Development, TDD,
+        HTML5, CSS3, Bootstrap, Angular, Responsive Design, Frontend Development,
+        Backend Development, Full Stack, MEAN Stack, MERN Stack,
+        System Architecture, Software Architecture, Design Patterns, MVC,
+        API Development, API Design, Webhook, Event-Driven Architecture,
+        Caching, Redis Caching, CDN, CloudFront, Performance Tuning,
+        Data Structures, Algorithms, Problem Solving, LeetCode,
+        Linux, Shell Scripting, Bash, Command Line,
+        Monitoring, CloudWatch, Application Monitoring, Logging, Debugging,
+        Code Coverage, Software Quality, Best Practices, Clean Code,
+        Nvidia, Paras Industries, Nimbeshwar Technologies, Northeastern University,
+        B2C, E-commerce Platform, Fintech, Payment API, Inventory Management,
+        Memory Optimization, Build Optimization, Parallel Processing,
+        Team Leadership, Cross-functional Teams, Technical Documentation,
+        Master's Degree, Information Systems, Electronics Engineering,
+        Developer Productivity, Cost Optimization, Infrastructure Cost Reduction,
+        Recent Graduate, MS Graduate, Graduate Student
+    </div>
 
     <!-- Footer -->
     <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-brand">
-            <h3 class="footer-name">Nilesh Parmar</h3>
-            <p class="footer-tagline">
-              Building the future, one line of code at a time
-            </p>
-          </div>
-
-          <div class="footer-links">
-            <a
-              href="https://github.com/nileshparmar0"
-              target="_blank"
-              class="footer-link"
-            >
-              <i class="fab fa-github"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/nilesh-parmar-/"
-              target="_blank"
-              class="footer-link"
-            >
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="mailto:parmar.nil@northeastern.edu" class="footer-link">
-              <i class="fas fa-envelope"></i>
-            </a>
-            <a href="tel:+18573794764" class="footer-link">
-              <i class="fas fa-phone"></i>
-            </a>
-          </div>
+        <div class="container">
+            <p>&copy; 2024 Nilesh Parmar. All rights reserved.</p>
         </div>
-
-        <div class="footer-divider"></div>
-
-        <p class="footer-copyright">
-          &copy; 2024 Nilesh Parmar. Crafted with passion and code.
-        </p>
-
-        <!-- Performance Metrics Badge -->
-        <div class="performance-badge">
-          <div class="metric-item">
-            <i class="fas fa-tachometer-alt"></i>
-            <span class="metric-label">Performance</span>
-            <span class="metric-value">98</span>
-          </div>
-          <div class="metric-item">
-            <i class="fas fa-universal-access"></i>
-            <span class="metric-label">Accessibility</span>
-            <span class="metric-value">100</span>
-          </div>
-          <div class="metric-item">
-            <i class="fas fa-search"></i>
-            <span class="metric-label">SEO</span>
-            <span class="metric-value">100</span>
-          </div>
-          <div class="metric-item">
-            <i class="fas fa-check-circle"></i>
-            <span class="metric-label">Best Practices</span>
-            <span class="metric-value">95</span>
-          </div>
-        </div>
-      </div>
     </footer>
 
     <script src="script.js"></script>
-    <div class="chatbot-toggle" id="chatbotToggle">
-      <svg viewBox="0 0 24 24">
-        <path
-          d="M12 2C6.48 2 2 6.48 2 12c0 1.19.22 2.34.6 3.41L2 22l6.59-.6c1.07.38 2.22.6 3.41.6 5.52 0 10-4.48 10-10S17.52 2 12 2zm0 2c4.41 0 8 3.59 8 8s-3.59 8-8 8c-1.03 0-2.01-.2-2.91-.55L9 19l-.45.09-.55.1-3.58.32.32-3.58.1-.55L5 15l-.45-.09C4.2 14.01 4 13.03 4 12c0-4.41 3.59-8 8-8zm-3 5v2h6V9H9zm0 3v2h4v-2H9z"
-        />
-      </svg>
-      <div class="chat-notification">1</div>
-    </div>
-
-    <!-- Chatbot Container -->
-    <div class="chatbot-container" id="chatbotContainer">
-      <div class="chat-header">
-        <div class="bot-avatar">🤖</div>
-        <div class="bot-info">
-          <div class="bot-name">Portfolio Assistant</div>
-          <div class="bot-status">
-            <span class="status-dot"></span>
-            <span>Active now</span>
-          </div>
-        </div>
-        <button class="close-chat" id="closeChat">✕</button>
-      </div>
-
-      <div class="chat-messages" id="chatMessages">
-        <!-- Messages will be added here dynamically -->
-      </div>
-
-      <div class="quick-actions">
-        <div
-          class="quick-action"
-          onclick="sendQuickMessage('Tell me about Nilesh\'s experience')"
-        >
-          Experience
-        </div>
-        <div
-          class="quick-action"
-          onclick="sendQuickMessage('What technologies does he know?')"
-        >
-          Skills
-        </div>
-        <div
-          class="quick-action"
-          onclick="sendQuickMessage('Show me his projects')"
-        >
-          Projects
-        </div>
-        <div
-          class="quick-action"
-          onclick="sendQuickMessage('How can I contact him?')"
-        >
-          Contact
-        </div>
-      </div>
-
-      <div class="chat-input-container">
-        <input
-          type="text"
-          class="chat-input"
-          id="chatInput"
-          placeholder="Ask me anything about Nilesh..."
-          onkeypress="handleKeyPress(event)"
-        />
-        <button class="send-button" onclick="sendMessage()">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </body>
+</body>
 </html>
