@@ -6,7 +6,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
     initActiveNavigation();
-    initSkillBarAnimation();
     initBackToTop();
     initSectionAnimations();
 });
@@ -65,34 +64,6 @@ function initActiveNavigation() {
     
     window.addEventListener('scroll', updateActiveNav);
     updateActiveNav();
-}
-
-// ===================================
-// SKILL BAR ANIMATION
-// ===================================
-function initSkillBarAnimation() {
-    const skillBars = document.querySelectorAll('.skill-progress');
-    
-    const skillObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const targetWidth = entry.target.style.width;
-                entry.target.style.width = '0%';
-                
-                setTimeout(() => {
-                    entry.target.style.width = targetWidth;
-                }, 100);
-                
-                skillObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.5
-    });
-    
-    skillBars.forEach(bar => {
-        skillObserver.observe(bar);
-    });
 }
 
 // ===================================
