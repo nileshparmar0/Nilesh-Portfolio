@@ -1206,3 +1206,246 @@ footer {
     .quick-stat-item { width: 100%; }
     .back-to-top   { bottom: 20px; right: 20px; width: 42px; height: 42px; }
 }
+
+/* ===================================
+   SCROLL PROGRESS BAR
+   =================================== */
+
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899, #06b6d4);
+    z-index: 9999;
+    border-radius: 0 2px 2px 0;
+    transition: width 0.08s linear;
+    pointer-events: none;
+}
+
+/* ===================================
+   DEVICONS IN SKILL TAGS
+   =================================== */
+
+.skill-tag-inline i {
+    font-size: 0.95rem;
+    vertical-align: middle;
+    margin-right: 5px;
+    line-height: 1;
+}
+
+.tech-tag i {
+    font-size: 0.82rem;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+/* ===================================
+   FEATURED PROJECT CARD
+   =================================== */
+
+.project-card.featured {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg,
+        rgba(59, 130, 246, 0.07) 0%,
+        rgba(139, 92, 246, 0.05) 100%);
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+.project-card.featured:hover {
+    border-color: rgba(59, 130, 246, 0.45);
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(59, 130, 246, 0.2),
+        0 0 80px rgba(59, 130, 246, 0.1);
+}
+
+.featured-inner {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.featured-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(251, 191, 36, 0.1);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+}
+
+.featured-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+.metric-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 16px 10px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.metric-card:hover {
+    border-color: var(--border-accent);
+    background: rgba(59, 130, 246, 0.08);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15);
+}
+
+.metric-value {
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.metric-label {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+}
+
+/* ===================================
+   STAGGERED CARD ANIMATIONS
+   =================================== */
+
+.experience-item,
+.skill-category,
+.education-item,
+.contact-item {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s ease, transform 0.55s ease,
+                border-color 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.project-card {
+    opacity: 0;
+    transition: opacity 0.55s ease,
+                border-color 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.experience-item.animate-in,
+.skill-category.animate-in,
+.education-item.animate-in,
+.contact-item.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card.animate-in { opacity: 1; }
+
+/* ===================================
+   CONTACT SECTION — SPLIT LAYOUT
+   =================================== */
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+    max-width: 1000px;
+    margin: 44px auto 0;
+    text-align: left;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+/* Contact form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.form-group input,
+.form-group textarea {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    padding: 11px 14px;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    outline: none;
+    resize: vertical;
+    width: 100%;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+    background: var(--bg-card-hover);
+}
+
+.submit-btn {
+    align-self: flex-start;
+    cursor: pointer;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(59, 130, 246, 0.55);
+}
+
+/* ===================================
+   RESPONSIVE — NEW ADDITIONS
+   =================================== */
+
+@media (max-width: 900px) {
+    .featured-inner { grid-template-columns: 1fr; }
+    .featured-metrics { grid-template-columns: repeat(3, 1fr); }
+    .contact-wrapper { grid-template-columns: 1fr; gap: 32px; }
+    .contact-info { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+    .featured-metrics { grid-template-columns: repeat(2, 1fr); }
+    .contact-info { grid-template-columns: 1fr; }
+}
