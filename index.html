@@ -31,13 +31,21 @@
 
     <!-- Header -->
     <header>
+      <canvas id="hero-canvas"></canvas>
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+      <div class="hero-blob hero-blob-3"></div>
+      <div class="spotlight"></div>
       <div class="container">
         <div class="header-content">
-          <div class="profile-img">
-            <img src="images/Nilesh.jpg" alt="Nilesh Parmar" />
+          <div class="avatar-wrapper">
+            <div class="avatar-ring"></div>
+            <div class="profile-img">
+              <img src="images/Nilesh.jpg" alt="Nilesh Parmar" />
+            </div>
           </div>
           <h1>Nilesh Parmar</h1>
-          <p class="title">Software Engineer | Full-Stack Developer</p>
+          <p class="title"><span id="typed-text"></span><span class="typed-cursor"></span></p>
           <div class="status">Available for Opportunities</div>
           <div class="contact-links">
             <a href="mailto:nilesh097parmar@gmail.com" class="contact-link">
@@ -73,6 +81,11 @@
           </a>
         </div>
       </div>
+      <div class="scroll-indicator">
+        <div class="mouse-icon">
+          <div class="scroll-dot"></div>
+        </div>
+      </div>
     </header>
 
     <!-- Quick Stats Banner -->
@@ -82,7 +95,7 @@
           <div class="quick-stat-item fade-in-up">
             <div class="stat-icon">💼</div>
             <div class="stat-content">
-              <div class="stat-number">3+</div>
+              <div class="stat-number" data-target="3" data-suffix="+">3+</div>
               <div class="stat-label">Years Experience</div>
             </div>
           </div>
@@ -96,21 +109,21 @@
           <div class="quick-stat-item fade-in-up">
             <div class="stat-icon">🚀</div>
             <div class="stat-content">
-              <div class="stat-number">50%</div>
+              <div class="stat-number" data-target="50" data-suffix="%">50%</div>
               <div class="stat-label">Page Load Reduction</div>
             </div>
           </div>
           <div class="quick-stat-item fade-in-up">
             <div class="stat-icon">☁️</div>
             <div class="stat-content">
-              <div class="stat-number">30%</div>
+              <div class="stat-number" data-target="30" data-suffix="%">30%</div>
               <div class="stat-label">Reliability Improvement</div>
             </div>
           </div>
           <div class="quick-stat-item fade-in-up">
             <div class="stat-icon">⚡</div>
             <div class="stat-content">
-              <div class="stat-number">14%</div>
+              <div class="stat-number" data-target="14" data-suffix="%">14%</div>
               <div class="stat-label">Test Coverage Increase</div>
             </div>
           </div>
@@ -140,30 +153,25 @@
         <div class="summary">
           <p>
             <span class="highlight"
-              >Software Engineer with 3+ years of experience</span
+              >Software Engineer with 3+ years</span
             >
             delivering
-            <span class="highlight">high-performance distributed systems</span>
+            <span class="highlight">scalable distributed systems</span>
             and <span class="highlight">cloud-native platforms</span>. Proven
-            record improving system reliability by 30%, cutting page load times
-            by 50%, and raising test coverage by 14% across mission-critical
-            applications.
+            record of improving reliability by 30%, cutting load times by 50%,
+            and raising test coverage by 14%.
           </p>
           <p>
             Skilled in building
             <span class="highlight"
-              >scalable microservices (Node.js, Java, Spring Boot)</span
+              >production-grade microservices (Node.js, Java, Spring Boot)</span
             >
-            and shipping
-            <span class="highlight"
-              >secure, observable, production-ready systems on AWS &
-              Kubernetes</span
-            >. Currently pursuing my
-            <span class="highlight"
-              >MS in Information Systems at Northeastern University</span
-            >
-            (Expected August 2025), combining academic excellence with practical
-            industry experience.
+            on <span class="highlight">AWS & Kubernetes</span>, with hands-on
+            experience shipping
+            <span class="highlight">LLM-integrated and RAG-based features</span>.
+            Proficient in leveraging
+            <span class="highlight">AI tools (ChatGPT, Claude)</span> to
+            accelerate workflows and code quality.
           </p>
         </div>
       </div>
@@ -175,6 +183,7 @@
         <h2 class="section-title">Technical Skills</h2>
         <div class="all-skills">
           <h3>Skills</h3>
+          <div class="skills-grid">
           <div class="skill-category">
             <h4>Programming Languages</h4>
             <div class="skill-tags-all">
@@ -244,6 +253,7 @@
               <span class="skill-tag-inline">CI/CD pipelines</span>
             </div>
           </div>
+          </div><!-- /skills-grid -->
         </div>
       </div>
     </section>
@@ -255,19 +265,21 @@
         <div class="experience-list">
           <div class="experience-item">
             <div class="experience-header">
-              <div class="company">Paras Industries, India</div>
-              <div class="role">Software Engineer</div>
-              <div class="period">September 2021 - August 2023</div>
+              <div class="exp-left">
+                <div class="company">Paras Industries, India</div>
+                <div class="role">Software Engineer</div>
+              </div>
+              <div class="period">Sep 2021 – Aug 2023</div>
             </div>
             <ul class="achievements">
               <li>
-                Developed backend services and REST APIs for a B2C e-commerce
-                platform for industrial equipment, supporting seamless product
-                browsing, ordering, and payments for 2K daily users
+                Developed backend services and REST APIs for a high-traffic B2C
+                e-commerce platform supporting 2K+ daily users and reliable,
+                end-to-end transactional payment workflows
               </li>
               <li>
-                Built distributed retry system with RabbitMQ and in-memory
-                caching, improving payment reliability by 30%, recovering Rs. 6K
+                Built a distributed retry system with RabbitMQ and in-memory
+                caching, improving payment reliability by 30%, recovering $70+
                 daily revenue from failed transactions and ensuring
                 transactional consistency at scale
               </li>
@@ -297,9 +309,11 @@
 
           <div class="experience-item">
             <div class="experience-header">
-              <div class="company">Nvidia, India</div>
-              <div class="role">Software Engineer</div>
-              <div class="period">April 2021 - August 2021</div>
+              <div class="exp-left">
+                <div class="company">Nvidia, India</div>
+                <div class="role">Software Engineer</div>
+              </div>
+              <div class="period">Apr 2021 – Aug 2021</div>
             </div>
             <ul class="achievements">
               <li>
@@ -319,12 +333,6 @@
                 through improved debugging practices
               </li>
               <li>
-                Created testing documentation and onboarding guides to reduce
-                new hire ramp-up time, enabling code contributions within the
-                first week and establishing standardized testing practices
-                across the GPU driver team
-              </li>
-              <li>
                 Resolved 3 complex race conditions in GPU driver code to enhance
                 system stability, preventing intermittent failures in customer
                 deployments and reducing production incidents by improving
@@ -335,9 +343,11 @@
 
           <div class="experience-item">
             <div class="experience-header">
-              <div class="company">Nimbeshwar Technologies, India</div>
-              <div class="role">Software Engineer</div>
-              <div class="period">April 2020 - March 2021</div>
+              <div class="exp-left">
+                <div class="company">Nimbeshwar Technologies, India</div>
+                <div class="role">Software Engineer</div>
+              </div>
+              <div class="period">Apr 2020 – Mar 2021</div>
             </div>
             <ul class="achievements">
               <li>
@@ -373,18 +383,18 @@
             <div class="project-icon"><i class="fas fa-brain"></i></div>
             <h3 class="project-title">Academic Research Assistant Chatbot</h3>
             <p class="project-description">
-              Architected distributed chatbot using Akka Actor Model achieving
-              &lt;2-second response times via parallel PDF processing.
-              Implemented RAG pipeline with Qdrant vector database and Ollama
-              LLMs for natural language querying. Developed full-stack
-              application with Maven, Java Swing UI, and REST API supporting
-              multi-node cluster deployment.
+              Designed and implemented a distributed RAG-based research
+              assistant using Akka Cluster, enabling parallel PDF processing,
+              horizontal scalability, and low-latency (&lt;2s) query responses.
+              Built an actor-based, event-driven pipeline integrating the Qdrant
+              vector database and Ollama LLMs to deliver semantic search with
+              citation-backed responses via REST APIs and UI.
             </p>
             <div class="project-tech">
-              <span class="tech-tag">Akka Actor Model</span>
+              <span class="tech-tag">Akka Cluster</span>
               <span class="tech-tag">Qdrant</span>
               <span class="tech-tag">Ollama LLMs</span>
-              <span class="tech-tag">Java Swing</span>
+              <span class="tech-tag">Java</span>
               <span class="tech-tag">REST API</span>
               <span class="tech-tag">Maven</span>
             </div>
@@ -446,6 +456,67 @@
               <i class="fab fa-github"></i> View on GitHub
             </a>
           </div>
+
+          <div class="project-card">
+            <div class="project-icon"><i class="fas fa-comments"></i></div>
+            <h3 class="project-title">Therapist Copilot</h3>
+            <p class="project-description">
+              Developed a real-time AI backend using FastAPI with WebSocket
+              streaming, enabling low-latency audio transcription via
+              Deepgram/Whisper. Integrated Google Gemini LLMs via LangChain for
+              real-time risk assessment (suicide/self-harm detection), deploying
+              a containerized, production-ready service with REST APIs and
+              monitoring.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">WebSocket</span>
+              <span class="tech-tag">Deepgram/Whisper</span>
+              <span class="tech-tag">Google Gemini</span>
+              <span class="tech-tag">LangChain</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Python</span>
+            </div>
+            <a
+              href="https://github.com/nileshparmar0"
+              target="_blank"
+              class="project-link"
+            >
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3 class="project-title">Real-Time Fraud Detection Engine</h3>
+            <p class="project-description">
+              Architected an end-to-end, event-driven fraud detection pipeline
+              using Kafka, Go, and Redis, processing 50+ TPS at sub-100ms
+              latency with dead-letter queue recovery, retry logic, and
+              Prometheus monitoring for zero silent failures. Built a
+              production-grade ML scoring service (FastAPI + XGBoost, ROC-AUC
+              0.976, PR-AUC 0.902) with 22 real-time features, SHAP
+              explainability, and feature drift detection — deployed via Docker
+              Compose with a WebSocket React dashboard.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Kafka</span>
+              <span class="tech-tag">Go</span>
+              <span class="tech-tag">Redis</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">XGBoost</span>
+              <span class="tech-tag">Prometheus</span>
+              <span class="tech-tag">Docker Compose</span>
+              <span class="tech-tag">React</span>
+            </div>
+            <a
+              href="https://github.com/nileshparmar0"
+              target="_blank"
+              class="project-link"
+            >
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -491,7 +562,7 @@
 
         <div class="resume-actions">
           <a
-            href="Resume/Nilesh_Resume.pdf"
+            href="Resume/NileshResume.pdf"
             download="Nilesh_Parmar_Resume.pdf"
             class="contact-link download-resume"
           >
@@ -499,7 +570,7 @@
             Download PDF
           </a>
           <a
-            href="Resume/Nilesh_Resume.pdf"
+            href="Resume/NileshResume.pdf"
             target="_blank"
             class="contact-link secondary"
           >
@@ -510,7 +581,7 @@
 
         <div class="resume-preview">
           <iframe
-            src="Resume/Nilesh_Resume.pdf"
+            src="Resume/NileshResume.pdf"
             width="100%"
             height="800px"
             frameborder="0"
@@ -569,13 +640,15 @@
       CloudWatch, EKS, GPU driver, Memory leaks, Race conditions, Machine
       Learning, LLMs, Natural Language Processing, Information Systems,
       Electronics and Telecommunication, Boston, Mumbai, India, Full-time, Entry
-      Level, New Grad, MS Graduate
+      Level, New Grad, MS Graduate, FastAPI, WebSocket, Deepgram, Whisper,
+      Google Gemini, LangChain, Kafka, XGBoost, Prometheus, SHAP, Fraud
+      Detection, Therapist Copilot, LLM-integrated, RAG-based, ChatGPT, Claude
     </div>
 
     <!-- Footer -->
     <footer>
       <div class="container">
-        <p>&copy; 2024 Nilesh Parmar. All rights reserved.</p>
+        <p>&copy; 2026 Nilesh Parmar. All rights reserved.</p>
       </div>
     </footer>
 
