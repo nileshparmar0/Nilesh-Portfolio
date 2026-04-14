@@ -3,16 +3,55 @@
 // ===================================
 
 document.addEventListener('DOMContentLoaded', function () {
+    initScrollProgress();
     initParticles();
     initHeroSpotlight();
     initTypingEffect();
     initCountUpStats();
     initCardTilt();
+    initStaggeredCards();
     initSmoothScrolling();
     initActiveNavigation();
     initBackToTop();
     initSectionAnimations();
 });
+
+// ===================================
+// SCROLL PROGRESS BAR
+// ===================================
+function initScrollProgress() {
+    const bar = document.getElementById('scroll-progress');
+    if (!bar) return;
+    window.addEventListener('scroll', () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (window.scrollY / max * 100).toFixed(2) + '%';
+    }, { passive: true });
+}
+
+// ===================================
+// STAGGERED CARD ANIMATIONS
+// ===================================
+function initStaggeredCards() {
+    // Project cards — opacity only (transform reserved for 3D tilt)
+    document.querySelectorAll('.project-card').forEach((card, i) => {
+        card.style.transitionDelay = `${i * 110}ms`;
+        const obs = new IntersectionObserver(([e]) => {
+            if (e.isIntersecting) { card.classList.add('animate-in'); obs.disconnect(); }
+        }, { threshold: 0.08 });
+        obs.observe(card);
+    });
+
+    // Everything else — opacity + translateY
+    ['.experience-item', '.skill-category', '.education-item', '.contact-item'].forEach(sel => {
+        document.querySelectorAll(sel).forEach((el, i) => {
+            el.style.transitionDelay = `${i * 90}ms`;
+            const obs = new IntersectionObserver(([e]) => {
+                if (e.isIntersecting) { el.classList.add('animate-in'); obs.disconnect(); }
+            }, { threshold: 0.1 });
+            obs.observe(el);
+        });
+    });
+}
 
 // ===================================
 // CANVAS PARTICLE SYSTEM
