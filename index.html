@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Nilesh Parmar - Software Engineer with 3+ years experience in distributed systems and cloud-native platforms"
+      content="Nilesh Parmar - Software Engineer with 3+ years across payments, GPU validation, and AI infrastructure, currently building LLM-powered features with Next.js, Gemini, and RAG pipelines"
     />
     <meta
       name="keywords"
-      content="Software Engineer, Full Stack Developer, React, Node.js, Python, Java, AWS, Kubernetes, Distributed Systems"
+      content="Software Engineer, Full Stack Developer, React, Next.js, Node.js, Python, Java, Go, AWS, Kubernetes, Distributed Systems, LLM, RAG, Gemini, LangChain"
     />
     <meta name="author" content="Nilesh Parmar" />
     <title>Nilesh Parmar | Software Engineer</title>
@@ -154,26 +154,19 @@
         <h2 class="section-title">Professional Summary</h2>
         <div class="summary">
           <p>
-            <span class="highlight"
-              >Software Engineer with 3+ years</span
-            >
-            delivering
-            <span class="highlight">scalable distributed systems</span>
-            and <span class="highlight">cloud-native platforms</span>. Proven
-            record of improving reliability by 30%, cutting load times by 50%,
-            and raising test coverage by 14%.
+            <span class="highlight">Software Engineer with 3+ years</span>
+            across <span class="highlight">payments, GPU validation, and AI infrastructure</span>.
+            Built a <span class="highlight">RabbitMQ-based payment retry system</span>
+            at Paras that recovered 30% of failed transactions, and debugged
+            <span class="highlight">GPU driver memory leaks</span> at Nvidia using Valgrind.
           </p>
           <p>
-            Skilled in building
-            <span class="highlight"
-              >production-grade microservices (Node.js, Java, Spring Boot)</span
-            >
-            on <span class="highlight">AWS & Kubernetes</span>, with hands-on
-            experience shipping
-            <span class="highlight">LLM-integrated and RAG-based features</span>.
-            Proficient in leveraging
-            <span class="highlight">AI tools (ChatGPT, Claude)</span> to
-            accelerate workflows and code quality.
+            Currently building
+            <span class="highlight">LLM-powered features</span> at IpserLab using
+            <span class="highlight">Next.js, Google Gemini, and RAG pipelines</span>,
+            with deep experience shipping
+            <span class="highlight">production-grade microservices (Spring Boot, Node.js, FastAPI)</span>
+            on <span class="highlight">AWS & Kubernetes</span>.
           </p>
         </div>
       </div>
@@ -266,6 +259,40 @@
           <div class="experience-item">
             <div class="experience-header">
               <div class="exp-left">
+                <div class="company">IpserLab, United States</div>
+                <div class="role">Software Engineer</div>
+              </div>
+              <div class="period">Oct 2025 – Present</div>
+            </div>
+            <ul class="achievements">
+              <li>
+                Built an AI Quiz Generator feature using Next.js and Google
+                Gemini 2.5 API, enabling admins to dynamically generate complete
+                quizzes from inputs including topic, goal, tone, and question
+                count, powering the AI content engine for a lead generation
+                platform processing 5K+ quizzes/month and lifting lead
+                conversion by 20%
+              </li>
+              <li>
+                Engineered structured JSON schema prompting with Gemini's
+                response schema config to enforce consistent, parseable quiz
+                output, and implemented a RAG pipeline to ground generated
+                questions in domain-specific knowledge for improved accuracy,
+                relevance, and consistent content quality across diverse quiz
+                topics
+              </li>
+              <li>
+                Secured a server-side API route in Next.js App Router with
+                prompt engineering and structured response handling, keeping
+                credentials backend-protected while delivering real-time
+                AI-generated titles, descriptions, and multiple-choice questions
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="exp-left">
                 <div class="company">Paras Industries, India</div>
                 <div class="role">Software Engineer</div>
               </div>
@@ -273,13 +300,14 @@
             </div>
             <ul class="achievements">
               <li>
-                Developed backend services and REST APIs for a high-traffic B2C
+                Owned backend services and REST APIs for a high-traffic B2C
                 e-commerce platform supporting 2K+ daily users and reliable,
-                end-to-end transactional payment workflows
+                end-to-end transactional payment workflows across multiple
+                regions and product categories
               </li>
               <li>
                 Built a distributed retry system with RabbitMQ and in-memory
-                caching, improving payment reliability by 30%, recovering $70+
+                caching, improving payment reliability by 30%, recovering $2K+
                 daily revenue from failed transactions and ensuring
                 transactional consistency at scale
               </li>
@@ -290,19 +318,9 @@
                 catalog
               </li>
               <li>
-                Deployed microservices on AWS EKS (Kubernetes), configured
-                auto-scaling and cache pre-warming to handle traffic spikes
-                while maintaining stable uptime and optimal system performance
-              </li>
-              <li>
-                Implemented an observability platform using CloudWatch metrics
-                and alerts, reducing incident resolution time
-              </li>
-              <li>
-                Mentored 3-4 junior developers, conducting weekly technical
-                sessions and code reviews that reduced onboarding time by 40%
-                and accelerated feature delivery across the engineering
-                organization
+                Deployed microservices on AWS EKS with auto-scaling and cache
+                pre-warming, and built a CloudWatch observability platform that
+                cut incident resolution time by 60% during traffic spikes
               </li>
             </ul>
           </div>
@@ -317,14 +335,10 @@
             </div>
             <ul class="achievements">
               <li>
-                Developed GPU driver validation framework with 150+ Python unit
+                Authored a GPU driver validation framework with 150+ Python unit
                 tests to increase test coverage from 63% to 77%, reducing
                 production bugs by 25% and validating driver functionality
                 across 10+ GPU architectures
-              </li>
-              <li>
-                Optimized build system with parallel compilation and caching to
-                cut average build time by 14 minutes
               </li>
               <li>
                 Diagnosed and fixed 3 critical memory leaks using Valgrind and
@@ -351,22 +365,21 @@
             </div>
             <ul class="achievements">
               <li>
-                Developed core Payment API using Java (Spring Boot) and
-                PostgreSQL, improving transaction reliability by 20%, reducing
-                response times by 4× and processing 10K+ daily transactions at
-                scale
+                Designed and launched a core Payment API using Java (Spring
+                Boot) and PostgreSQL, improving transaction reliability by 20%,
+                reducing response times by 4× and processing 10K+ daily
+                transactions at scale
               </li>
               <li>
-                Implemented Redis caching and optimized database queries to
-                boost system throughput under high-traffic conditions
+                Implemented Redis caching with TTL-based invalidation and
+                optimized database queries to boost system throughput, reducing
+                database load by 40% under high-traffic, concurrent-load
+                conditions across regional deployments
               </li>
               <li>
                 Automated CI/CD pipelines with GitHub Actions and Docker,
-                cutting deployment time from 3 hours to 45 minutes
-              </li>
-              <li>
-                Collaborated with product teams to design scalable microservice
-                architecture and streamline release processes
+                cutting deployment time from 3 hours to 45 minutes and
+                accelerating release velocity for the engineering team
               </li>
             </ul>
           </div>
@@ -674,19 +687,21 @@
     <!-- ATS Keywords (Hidden) -->
     <div class="ats-keywords">
       Software Engineer, Full Stack Developer, Senior Software Engineer, Java,
-      Python, JavaScript, SQL, Go, TypeScript, React, HTML5, CSS3, Bootstrap,
-      Angular, Zustand, Node.js, Spring Boot, Flask, REST APIs, GraphQL, Akka,
-      AWS, Docker, Kubernetes, GitHub Actions, CloudFront, MySQL, PostgreSQL,
-      MongoDB, Redis, Qdrant, Microservices, Distributed Systems, RAG, Actor
-      Model, Git, Postman, Jira, Unit Testing, PyTest, Valgrind, CI/CD
-      pipelines, Paras Industries, Nvidia, Nimbeshwar Technologies, Northeastern
-      University, University of Mumbai, B2C e-commerce, Payment API, RabbitMQ,
-      CloudWatch, EKS, GPU driver, Memory leaks, Race conditions, Machine
-      Learning, LLMs, Natural Language Processing, Information Systems,
-      Electronics and Telecommunication, Boston, Mumbai, India, Full-time, Entry
-      Level, New Grad, MS Graduate, FastAPI, WebSocket, Deepgram, Whisper,
-      Google Gemini, LangChain, Kafka, XGBoost, Prometheus, SHAP, Fraud
-      Detection, Therapist Copilot, LLM-integrated, RAG-based, ChatGPT, Claude
+      Python, JavaScript, SQL, Go, TypeScript, React, Next.js, HTML5, CSS3,
+      Bootstrap, Angular, Zustand, Node.js, Spring Boot, Flask, REST APIs,
+      GraphQL, gRPC, Akka, AWS, Docker, Kubernetes, GitHub Actions, CloudFront,
+      MySQL, PostgreSQL, MongoDB, Redis, Qdrant, Microservices, Distributed
+      Systems, Event-Driven Architecture, RAG, Actor Model, Git, Postman, Jira,
+      Unit Testing, PyTest, Valgrind, CI/CD pipelines, IpserLab, Paras
+      Industries, Nvidia, Nimbeshwar Technologies, Northeastern University,
+      University of Mumbai, B2C e-commerce, Payment API, RabbitMQ, CloudWatch,
+      EKS, GPU driver, Memory leaks, Race conditions, AI Quiz Generator,
+      Prompt Engineering, Machine Learning, LLMs, Natural Language Processing,
+      Information Systems, Electronics and Telecommunication, United States,
+      Boston, Mumbai, India, Full-time, Entry Level, New Grad, MS Graduate,
+      FastAPI, WebSocket, Deepgram, Whisper, Google Gemini, Gemini 2.5,
+      LangChain, Ollama, Kafka, XGBoost, Prometheus, SHAP, Fraud Detection,
+      Therapist Copilot, LLM-integrated, RAG-based, ChatGPT, Claude
     </div>
 
     <!-- Footer -->
