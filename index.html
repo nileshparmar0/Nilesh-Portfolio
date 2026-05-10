@@ -14,7 +14,7 @@
     <meta name="author" content="Nilesh Parmar" />
     <title>Nilesh Parmar | Software Engineer</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -25,7 +25,36 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
   </head>
   <body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+      <div class="loader-counter">
+        <span class="loader-num">00</span><span class="loader-pct">%</span>
+      </div>
+      <div class="loader-line"><div class="loader-fill"></div></div>
+    </div>
+
+    <!-- Global decor -->
     <div id="scroll-progress"></div>
+    <canvas id="snow-canvas"></canvas>
+    <div class="cursor"><span class="cursor-label"></span></div>
+
+    <!-- Hamburger + menu -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span>
+      <span></span>
+    </button>
+    <div class="menu-panel" id="menuPanel">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Stack</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" title="Back to top">
       <i class="fas fa-arrow-up"></i>
@@ -33,59 +62,50 @@
 
     <!-- Header -->
     <header>
-      <canvas id="hero-canvas"></canvas>
-      <div class="hero-blob hero-blob-1"></div>
-      <div class="hero-blob hero-blob-2"></div>
-      <div class="hero-blob hero-blob-3"></div>
-      <div class="spotlight"></div>
       <div class="container">
         <div class="header-content">
-          <div class="avatar-wrapper">
-            <div class="avatar-ring"></div>
-            <div class="profile-img">
-              <img src="images/Nilesh.jpg" alt="Nilesh Parmar" />
+          <div class="hero-grid">
+            <div class="hero-left">
+              <h1>
+                <span class="hero-line"><span class="accent">Software</span></span>
+                <span class="hero-line"><span>Engineer</span></span>
+              </h1>
+              <p class="title hero-fade d1">Hi! I'm <strong>Nilesh</strong>. A Software Engineer with 3+ years across payments, GPU validation, and AI infrastructure &mdash; currently building LLM-powered features at IpserLab using Next.js, Gemini, and RAG pipelines.</p>
+              <div class="contact-links hero-fade d2">
+                <a href="mailto:nilesh097parmar@gmail.com" class="contact-link">
+                  Let's Talk
+                </a>
+                <a
+                  href="Resume/NileshResume.pdf"
+                  download="Nilesh_Parmar_Resume.pdf"
+                  class="contact-link download-resume"
+                  data-cursor="Download"
+                >
+                  <i class="fas fa-download"></i>
+                  Resume
+                </a>
+              </div>
+              <div class="status hero-fade d3">Available for new opportunities</div>
+            </div>
+            <div class="hero-stats hero-fade d4">
+              <div class="hero-stat">
+                <span class="num" data-target="3" data-suffix="+">3+</span>
+                <span class="lbl">Years of Experience</span>
+              </div>
+              <div class="hero-stat">
+                <span class="num" data-target="5" data-suffix="K+">5K+</span>
+                <span class="lbl">Quizzes / month</span>
+              </div>
+              <div class="hero-stat">
+                <span class="num" data-target="50" data-suffix="%">50%</span>
+                <span class="lbl">Page Load Cut</span>
+              </div>
+              <div class="hero-stat">
+                <span class="num" data-target="30" data-suffix="%">30%</span>
+                <span class="lbl">Reliability Lift</span>
+              </div>
             </div>
           </div>
-          <h1>Nilesh Parmar</h1>
-          <p class="title"><span id="typed-text"></span><span class="typed-cursor"></span></p>
-          <div class="status">Available for Opportunities</div>
-          <div class="contact-links">
-            <a href="mailto:nilesh097parmar@gmail.com" class="contact-link">
-              <i class="fas fa-envelope"></i>
-              Email Me
-            </a>
-            <a
-              href="https://www.linkedin.com/in/nilesh-parmar-/"
-              target="_blank"
-              class="contact-link secondary"
-            >
-              <i class="fab fa-linkedin"></i>
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/nileshparmar0"
-              target="_blank"
-              class="contact-link secondary"
-            >
-              <i class="fab fa-github"></i>
-              GitHub
-            </a>
-          </div>
-
-          <!-- Download Resume Button -->
-          <a
-            href="Resume/NileshResume.pdf"
-            download="Nilesh_Parmar_Resume.pdf"
-            class="contact-link download-resume"
-          >
-            <i class="fas fa-download"></i>
-            Download Resume
-          </a>
-        </div>
-      </div>
-      <div class="scroll-indicator">
-        <div class="mouse-icon">
-          <div class="scroll-dot"></div>
         </div>
       </div>
     </header>
@@ -95,35 +115,30 @@
       <div class="container">
         <div class="quick-stats">
           <div class="quick-stat-item fade-in-up">
-            <div class="stat-icon">💼</div>
             <div class="stat-content">
               <div class="stat-number" data-target="3" data-suffix="+">3+</div>
               <div class="stat-label">Years Experience</div>
             </div>
           </div>
           <div class="quick-stat-item fade-in-up">
-            <div class="stat-icon">🎓</div>
             <div class="stat-content">
               <div class="stat-number">MS</div>
               <div class="stat-label">Northeastern</div>
             </div>
           </div>
           <div class="quick-stat-item fade-in-up">
-            <div class="stat-icon">🚀</div>
             <div class="stat-content">
               <div class="stat-number" data-target="50" data-suffix="%">50%</div>
               <div class="stat-label">Page Load Reduction</div>
             </div>
           </div>
           <div class="quick-stat-item fade-in-up">
-            <div class="stat-icon">☁️</div>
             <div class="stat-content">
               <div class="stat-number" data-target="30" data-suffix="%">30%</div>
               <div class="stat-label">Reliability Improvement</div>
             </div>
           </div>
           <div class="quick-stat-item fade-in-up">
-            <div class="stat-icon">⚡</div>
             <div class="stat-content">
               <div class="stat-number" data-target="14" data-suffix="%">14%</div>
               <div class="stat-label">Test Coverage Increase</div>
@@ -394,7 +409,7 @@
         <div class="projects-grid">
 
           <!-- FEATURED: Real-Time Fraud Detection Engine -->
-          <div class="project-card featured">
+          <div class="project-card featured" data-cursor="View →">
             <div class="featured-inner">
               <div class="featured-main">
                 <div class="featured-badge"><i class="fas fa-star"></i> Featured Project</div>
@@ -454,7 +469,7 @@
           </div>
 
           <!-- Academic Research Assistant Chatbot -->
-          <div class="project-card">
+          <div class="project-card" data-cursor="View →">
             <div class="project-icon"><i class="fas fa-brain"></i></div>
             <h3 class="project-title">Academic Research Assistant Chatbot</h3>
             <p class="project-description">
@@ -479,7 +494,7 @@
           </div>
 
           <!-- Therapist Copilot -->
-          <div class="project-card">
+          <div class="project-card" data-cursor="View →">
             <div class="project-icon"><i class="fas fa-comments"></i></div>
             <h3 class="project-title">Therapist Copilot</h3>
             <p class="project-description">
@@ -505,7 +520,7 @@
           </div>
 
           <!-- Social Media Application -->
-          <div class="project-card">
+          <div class="project-card" data-cursor="View →">
             <div class="project-icon"><i class="fas fa-users"></i></div>
             <h3 class="project-title">Social Media Application</h3>
             <p class="project-description">
@@ -527,7 +542,7 @@
           </div>
 
           <!-- Fitness Tracker -->
-          <div class="project-card">
+          <div class="project-card" data-cursor="View →">
             <div class="project-icon"><i class="fas fa-dumbbell"></i></div>
             <h3 class="project-title">Fitness Tracker</h3>
             <p class="project-description">
@@ -596,6 +611,7 @@
             href="Resume/NileshResume.pdf"
             download="Nilesh_Parmar_Resume.pdf"
             class="contact-link download-resume"
+            data-cursor="Download"
           >
             <i class="fas fa-download"></i>
             Download PDF
@@ -604,6 +620,7 @@
             href="Resume/NileshResume.pdf"
             target="_blank"
             class="contact-link secondary"
+            data-cursor="Open"
           >
             <i class="fas fa-external-link-alt"></i>
             Open in New Tab
@@ -707,7 +724,14 @@
     <!-- Footer -->
     <footer>
       <div class="container">
-        <p>&copy; 2026 Nilesh Parmar. All rights reserved.</p>
+        <div class="footer-row">
+          <div class="footer-links">
+            <a href="https://github.com/nileshparmar0" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/nilesh-parmar-/" target="_blank">LinkedIn</a>
+            <a href="mailto:nilesh097parmar@gmail.com">Email</a>
+          </div>
+          <div class="footer-meta">&copy; 2026 &middot; Nilesh Parmar &middot; Built with HTML, CSS, JS</div>
+        </div>
       </div>
     </footer>
 
