@@ -454,19 +454,6 @@ h1 .accent {
     border-color: var(--text);
 }
 
-.download-resume {
-    background: transparent !important;
-    border: 1px solid var(--accent) !important;
-    color: var(--accent) !important;
-    padding: 17px 28px;
-    margin-top: 0 !important;
-}
-
-.download-resume:hover {
-    background: var(--accent) !important;
-    color: #000 !important;
-}
-
 .status {
     display: inline-flex;
     align-items: center;
@@ -1047,35 +1034,6 @@ section {
 }
 
 /* ===================================
-   RESUME SECTION
-   =================================== */
-
-.resume-actions {
-    display: flex;
-    justify-content: flex-start;
-    gap: 16px;
-    margin: 0 0 48px;
-    flex-wrap: wrap;
-}
-
-.resume-preview {
-    max-width: none;
-    margin: 0;
-    border-radius: 0;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    box-shadow: none;
-}
-
-.resume-preview iframe {
-    display: block;
-    width: 100%;
-    min-height: 800px;
-    border: none;
-    background: #fff;
-}
-
-/* ===================================
    CONTACT SECTION
    =================================== */
 
@@ -1451,7 +1409,6 @@ footer {
     .hamburger        { right: 24px; top: 24px; }
     .contact-links    { flex-direction: column; align-items: stretch; gap: 12px; }
     .contact-link     { justify-content: center; padding: 16px 24px; }
-    .download-resume  { justify-content: center; padding: 15px 24px; }
     .contact-wrapper  { grid-template-columns: 1fr; gap: 60px; }
     .education-item   { grid-template-columns: 30px 1fr; gap: 16px; }
     .edu-period       { grid-column: 1 / -1; margin-top: 8px; }
@@ -1469,4 +1426,175 @@ footer {
     .degree           { font-size: 1.4rem; }
     .back-to-top      { bottom: 18px; right: 18px; width: 38px; height: 38px; }
     #about .summary   { font-size: 1.4rem; }
+}
+
+/* ===================================
+   EXPERIENCE — CLIENT & PROJECT BLOCKS
+   =================================== */
+
+.exp-blurb {
+    max-width: 820px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin: 0 0 30px;
+}
+
+.exp-project { margin-top: 0; padding-top: 0; border-top: none; }
+
+.exp-project + .exp-project {
+    margin-top: 34px;
+    padding-top: 34px;
+    border-top: 1px solid var(--border);
+}
+
+.exp-project .exp-blurb { margin-bottom: 20px; }
+
+.client-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.01em;
+    margin-bottom: 14px;
+}
+
+.client-tag {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent-soft);
+    border-radius: 999px;
+    padding: 3px 10px;
+    line-height: 1.5;
+}
+
+.project-name {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    margin: 0 0 12px;
+    max-width: 820px;
+}
+
+.project-problem {
+    max-width: 800px;
+    color: #7d7d7d;
+    font-size: 0.88rem;
+    line-height: 1.75;
+    margin: 0 0 20px;
+    padding-left: 16px;
+    border-left: 2px solid var(--border-strong);
+}
+
+/* ===================================
+   PROJECTS — BODY COLUMN, DESCRIPTION & METRICS
+   =================================== */
+
+.project-card { align-items: start; }
+
+.project-card::before { align-self: start; margin-top: 10px; grid-row: 1; }
+
+.project-body { grid-column: 2; grid-row: 1; display: block; }
+
+.project-card > .project-link {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: start;
+    margin-top: 6px;
+}
+
+.project-title  { grid-column: auto; }
+.project-tech   { grid-column: auto; grid-row: auto; }
+
+.project-description {
+    display: block;
+    grid-column: auto;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    max-width: 760px;
+    margin: 0 0 16px;
+}
+
+.project-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 18px;
+}
+
+.metric-chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 7px;
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    padding: 5px 12px;
+}
+
+.metric-chip b {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.88rem;
+    letter-spacing: 0.02em;
+}
+
+.project-award {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent-soft);
+    border-radius: 999px;
+    padding: 4px 11px;
+    margin-left: 12px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+/* ===================================
+   AWARD ROW (inside Education)
+   =================================== */
+
+.education-item.award .education-icon {
+    background: transparent;
+    border: 2px solid var(--accent);
+}
+
+/* ===================================
+   RESPONSIVE — NEW BLOCKS
+   =================================== */
+
+@media (max-width: 1024px) {
+    .project-body { grid-column: 2; grid-row: 1; }
+    .project-card > .project-link {
+        grid-column: 2;
+        grid-row: auto;
+        align-self: start;
+        margin-top: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .client-label     { font-size: 0.98rem; flex-wrap: wrap; gap: 10px; }
+    .project-problem  { padding-left: 12px; font-size: 0.85rem; }
+    .project-award    { margin-left: 0; margin-top: 10px; display: block; width: fit-content; }
+    .exp-project + .exp-project { margin-top: 28px; padding-top: 28px; }
 }
