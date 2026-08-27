@@ -277,5 +277,5 @@ function initSectionAnimations() {
 // ===================================
 // CONSOLE
 // ===================================
-console.log('%cNilesh Parmar — Software Engineer', 'color: #3df54d; font-size: 14px; font-weight: 700; letter-spacing: 0.1em;');
-console.log('%cnilesh097parmar@gmail.com', 'color: #999; font-size: 11px;');
+console.log('%cNilesh Parmar — AI Engineer', 'color: #3df54d; font-size: 14px; font-weight: 700; letter-spacing: 0.1em;');
+console.log('%cnilesh091parmar@gmail.com', 'color: #999; font-size: 11px;');
